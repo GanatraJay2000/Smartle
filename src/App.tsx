@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import CircularProgress from '@mui/material/CircularProgress';
+import routes from './util/routes';
+import Header from './components/organisms/Header';
+import { ThemeProvider, createTheme } from '@mui/material';
+
+const theme = createTheme();
 
 function App() {
+  const [showHeader, setShowHeader] = useState<boolean>(true);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>      
+        <div className="App min-h-screen">
+          {showHeader && <Header />}          
+          <Suspense
+            fallback={
+              <div style={{ marginTop: '40vh', textAlign: 'center' }}>
+                <CircularProgress color="secondary" />
+              </div>
+            }
+          >          
+                <div className="md:p-5 ">
+                    <Routes>                    
+                        {routes.map((route) => (
+                            <Route {...route} />
+                        ))}          
+                    </Routes>           
+                </div>
+            </Suspense>
+        </div>      
+    </ThemeProvider>
   );
 }
 
