@@ -1,0 +1,14 @@
+export const Ellipse1 = require('./ellipse1.svg');
+export const FeatureOutline = require('./feature_outline.svg');
+export const Feature = require('./feature.svg');
+export const TopLeftGrad = require('./topLeftGrad.svg');
+export const TopRightGrad = require('./topRightGrad.svg');
+export const Tri = require('./tri.svg');
+export const TriPng = require('./tri.png');
+export const CreditsTag = require('./credits.svg');
+export const TopOutlined = require('./topOutlined.svg');
+export const TopFill = require('./topFill.svg');
+export const Clock = require('./clock.svg');
+export const Card = require('./card.svg');
+export const RatingStar = require('./ratingStar.svg');
+export const RatingStarEmpty = require('./ratingStarEmpty.svg');
