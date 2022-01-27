@@ -1,6 +1,5 @@
 import Button from '@mui/material/Button';
 import React from 'react';
-import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import Modal from '@mui/material/Modal';
 
 interface Props {

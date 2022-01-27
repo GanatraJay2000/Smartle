@@ -48,7 +48,7 @@ const Footer = ()=> {
         <div className='mt-12 mb-4 h-px w-full bg-zinc-500' ></div>
         <div className="mb-3 flex justify-between">
           <div className="">&copy; 2021 - All rights reserved</div>
-          <Socials items="instagram,facebook,twitter,linkedin" />
+          <Socials />
         </div>
       </div>
     </footer>

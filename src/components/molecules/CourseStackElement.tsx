@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { isNull } from '../../util/helpers';
-import { Fl, Dl, Mew, Cs, TopOutlined, Clock, Card } from '../../util/resources';
+import { Clock, Card } from '../../util/resources';
 
 interface Props{
     course: any;    

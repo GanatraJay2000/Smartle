@@ -1,11 +1,10 @@
-import type { LazyExoticComponent } from 'react';
 import { lazy } from 'react';
 
 // Lazy loaded components to improve base performance.
 const Home = lazy(() => import('../../pages/home'));
 const Courses = lazy(() => import('../../pages/courses'));
 const Course = lazy(() => import('../../pages/course'));
-const About = lazy(() => import('../../pages/about'));
+// const About = lazy(() => import('../../pages/about'));
 const Enterprise = lazy(() => import('../../pages/enterprise'));
 const Error = lazy(() => import('../../pages/error'));
 
@@ -13,8 +12,7 @@ const Error = lazy(() => import('../../pages/error'));
 interface RouteType {
 	exact?: boolean;
 	path?: string;
-	element: any;
-	// element: LazyExoticComponent<() => JSX.Element>;
+	element: any;	
 	key: string;
 	title: string;
 	show: boolean;

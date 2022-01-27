@@ -1,4 +1,3 @@
-import { margin } from '@mui/system';
 import React from 'react';
 import { ListIcon1, ListIcon2, ListIcon3, ListIcon4, ListIcon5 } from '../../../util/resources'
 import { Fade } from 'react-slideshow-image';

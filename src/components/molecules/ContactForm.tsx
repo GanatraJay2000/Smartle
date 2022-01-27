@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { isNull, cleanText, getSchema, toTitleCase, getFieldType } from '../../util/helpers';
+import { isNull, cleanText, getSchema } from '../../util/helpers';
 import * as Yup from 'yup';
-import { ErrorMessage, Form, Formik } from 'formik';
+import { Form, Formik } from 'formik';
 import TextField from '@mui/material/TextField';
 import Alert from '@mui/material/Alert';
 import MenuItem from '@mui/material/MenuItem';
@@ -66,7 +66,7 @@ const ContactForm = ({ fields, color='bg-accent-200', btnColor='bg-color-400' }:
                                     var labelName = cleanText(f.label) as string;
                                     return (<div key={idx} className={`${f.extraClass ?? 'mt-6'} px-4 w-${f.width ?? 'full'}`}>
                                         {
-                                            ['text'].includes(f.type) && f.multiline==true ? (
+                                            ['text'].includes(f.type) && f.multiline===true ? (
                                                 <TextField                                                        
                                                     multiline    
                                                     rows={4}

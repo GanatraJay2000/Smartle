@@ -1,6 +1,6 @@
 export function isNull(item: any) {
     if (item == null) return true;
-    if (item == undefined) return true;
+    if (item === undefined) return true;
     let type = typeof item;    
     if (type === 'object' && !Array.isArray(item)) {
         // console.log("object")
@@ -11,8 +11,8 @@ export function isNull(item: any) {
         // console.log("not object")
         if (!item) return true;
         if (item == null) return true;
-        if (item == []) return true;
-        if (item.length == 0) return true;
+        if (item === []) return true;
+        if (item.length === 0) return true;
         else return false;
     }
 }

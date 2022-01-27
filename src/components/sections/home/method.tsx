@@ -32,13 +32,13 @@ const Method = () => {
           <div className="h-full w-full flex gap-2 cursor-pointer"> 
             <div className="w-6/12 gap-2 flex flex-col ">
               <div className="w-full h-44 flex items-end justify-end">
-                <div className={`text-white bg-color-400 rounded-xl transition-all ${activeMeth == 'ct' ? 'h-full w-full text-3xl' : 'h-40 w-11/12 text-xl'} hover:w-full hover:h-full shadow flex justify-center items-center font-bold  text-center p-3 hover:text-3xl`}
+                <div className={`text-white bg-color-400 rounded-xl transition-all ${activeMeth === 'ct' ? 'h-full w-full text-3xl' : 'h-40 w-11/12 text-xl'} hover:w-full hover:h-full shadow flex justify-center items-center font-bold  text-center p-3 hover:text-3xl`}
                   onClick={()=>setActiveMeth("ct")}
                 dangerouslySetInnerHTML={{ __html: meth['ct'].title }}>                
                 </div>
               </div>
               <div className="w-full h-56 flex justify-end items-start">
-                <div className={`bg-accent-400 rounded-xl transition-all ${activeMeth == 'com' ? 'h-4/5 w-full text-3xl' : 'text-xl h-3/5 w-10/12'} hover:w-full hover:h-4/5 shadow flex justify-center items-center font-bold  hover:text-3xl p-3`}
+                <div className={`bg-accent-400 rounded-xl transition-all ${activeMeth === 'com' ? 'h-4/5 w-full text-3xl' : 'text-xl h-3/5 w-10/12'} hover:w-full hover:h-4/5 shadow flex justify-center items-center font-bold  hover:text-3xl p-3`}
                   onClick={()=>setActiveMeth("com")}
                 dangerouslySetInnerHTML={{ __html: meth['com'].title }}>                  
                 </div>
@@ -46,14 +46,14 @@ const Method = () => {
             </div>  
             <div className="w-6/12 gap-2 flex flex-col ">
               <div className="w-full h-56  flex items-end">
-                <div className={`bg-accent-400  rounded-xl transition-all ${activeMeth == 'col' ? 'h-full w-11/12 text-3xl' : 'h-5/6 w-9/12 text-xl'} hover:w-11/12 hover:h-full shadow flex justify-center items-center font-bold hover:text-3xl p-3`}
+                <div className={`bg-accent-400  rounded-xl transition-all ${activeMeth === 'col' ? 'h-full w-11/12 text-3xl' : 'h-5/6 w-9/12 text-xl'} hover:w-11/12 hover:h-full shadow flex justify-center items-center font-bold hover:text-3xl p-3`}
                   onClick={()=>setActiveMeth("col")}
                 dangerouslySetInnerHTML={{ __html: meth['col'].title }}>                  
                 </div>
               </div>
               <div className="w-full h-44  flex items-start">
                 <div className={`text-white bg-color-400 rounded-xl transition-all 
-                ${activeMeth == 'cr' ? 'h-full w-11/12 text-3xl' : 'h-5/6 w-9/12 text-xl'} hover:w-11/12 hover:h-full shadow flex justify-center items-center font-bold text-xl hover:text-3xl p-3`}
+                ${activeMeth === 'cr' ? 'h-full w-11/12 text-3xl' : 'h-5/6 w-9/12 text-xl'} hover:w-11/12 hover:h-full shadow flex justify-center items-center font-bold text-xl hover:text-3xl p-3`}
                   onClick={()=>setActiveMeth("cr")}
                 dangerouslySetInnerHTML={{ __html: meth['cr'].title }}> 
                 </div>

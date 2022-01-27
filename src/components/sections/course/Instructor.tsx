@@ -1,6 +1,5 @@
 import Rating from '@mui/material/Rating';
 import React from 'react';
-import { Demo as BImg,   Dog } from '../../../util/resources';
 import GradientBlobBL from '../../atom/GradientBlobBL';
 import PopOutCircle from '../../atom/PopOutCircle';
 import { RatingStar, RatingStarEmpty } from '../../../util/resources'
@@ -38,8 +37,8 @@ const Instructor = ({instructor}:Props) => {
                             max={instructor.stars}
                             readOnly 
                             getLabelText={(value: number) => `${value} Heart${value !== 1 ? 's' : ''}`}
-                            icon={<img src={RatingStar.default} />}
-                            emptyIcon={<img src={RatingStarEmpty.default} />}
+                            icon={<img alt="" src={RatingStar.default} />}
+                            emptyIcon={<img alt="" src={RatingStarEmpty.default} />}
                         />
                     </div>
                     <div className="text-lg ">{instructor.reviews} Total Reviews </div>

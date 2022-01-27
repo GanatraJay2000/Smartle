@@ -10,13 +10,13 @@ const theme = createTheme();
 
 
 function App() {
-  const [showHeader, setShowHeader] = useState<boolean>(true);
-  const [showFooter, setShowFooter] = useState<boolean>(true);
+  const [showHeader] = useState<boolean>(true);
+  const [showFooter] = useState<boolean>(true);
   const location = useLocation();
   
   useEffect(() => {
     window.scrollTo(0, 0);    
-    if (location.pathname == "/enterprise")
+    if (location.pathname === "/enterprise")
       document.documentElement.style.setProperty('--scrollBarColor', '#5290F2');
     else
       document.documentElement.style.setProperty('--scrollBarColor', '#917ebd');

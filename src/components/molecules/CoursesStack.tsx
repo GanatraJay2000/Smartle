@@ -1,5 +1,4 @@
 import React from 'react';
-import Transition from '../atom/Transition';
 import CourseStackElement from './CourseStackElement';
 import {
   CSSTransition,

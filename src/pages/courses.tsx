@@ -1,10 +1,8 @@
-import TextField from '@mui/material/TextField';
 import React, { useEffect, useState } from 'react';
 import GradientBlobT from '../components/atom/GradientBlobT';
 import CoursesStack from '../components/molecules/CoursesStack';
 import { getCourses } from '../util/api';
 import { isNull } from '../util/helpers';
-import { Fl, Dl, Mew, Cs, TopOutlined, Clock, Card } from '../util/resources';
 
 const Courses = () => {
   const [courses, setCourses] = useState<any>(undefined);
@@ -67,7 +65,7 @@ const Courses = () => {
           <div className="w-9/12">          
             <input type="text" id="filter-input"
               className="box-content border-0 shadow-none outline-0 rounded-lg px-5 text-neutral-400 font-semibold -z-10 h-full w-full"
-              onKeyDown={function(e){if (e.key == 'Enter') setFilterValue((e.target as any).value)}}
+              onKeyDown={function(e){if (e.key === 'Enter') setFilterValue((e.target as any).value)}}
             />
           </div>
           <button
@@ -83,13 +81,13 @@ const Courses = () => {
         <div className="flex justify-center mx-auto">
           <div
           onClick={()=>{setFilterAge('8-10')}}
-          className={`${filterAge == '8-10' ? 'bg-accent-400 border-2 border-accent-400':'bg-white border-2 border-accent-400'} mx-5 cursor-pointer px-6 py-1 rounded shadow-lg font-bold`}>8-10 Yrs</div>
+          className={`${filterAge === '8-10' ? 'bg-accent-400 border-2 border-accent-400':'bg-white border-2 border-accent-400'} mx-5 cursor-pointer px-6 py-1 rounded shadow-lg font-bold`}>8-10 Yrs</div>
           <div
           onClick={()=>{setFilterAge('11-12')}}
-          className={`${filterAge == '11-12' ? 'bg-accent-400 border-2 border-accent-400':'bg-white border-2 border-accent-400'} mx-5 cursor-pointer px-6 py-1 rounded shadow-lg font-bold`}>11-12 Yrs</div>
+          className={`${filterAge === '11-12' ? 'bg-accent-400 border-2 border-accent-400':'bg-white border-2 border-accent-400'} mx-5 cursor-pointer px-6 py-1 rounded shadow-lg font-bold`}>11-12 Yrs</div>
           <div
           onClick={()=>{setFilterAge('13-14')}}
-          className={`${filterAge == '13-14' ? 'bg-accent-400 border-2 border-accent-400':'bg-white border-2 border-accent-400'} mx-5 cursor-pointer px-6 py-1 rounded shadow-lg font-bold`}>13-14 Yrs</div>
+          className={`${filterAge === '13-14' ? 'bg-accent-400 border-2 border-accent-400':'bg-white border-2 border-accent-400'} mx-5 cursor-pointer px-6 py-1 rounded shadow-lg font-bold`}>13-14 Yrs</div>
         </div>
       </div>
       {

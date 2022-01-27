@@ -1,4 +1,3 @@
-import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
@@ -24,7 +23,7 @@ const Course = () => {
 				setFail(e.message);
 			}
 		})();
-  }, [])
+  }, [id])
 
   useEffect(() => {
     if (isNull(course)) return;
@@ -41,7 +40,7 @@ const Course = () => {
   return (<>
     <GradBlobTRSm />
     {
-      !isNull(course) && !isNull(instructor) ? (<>
+      !isNull(course) && !isNull(instructor) && !fail ? (<>
           <div className="mx-auto w-10/12 my-12 ">
             <Banner course={course} />
           <StatsCard

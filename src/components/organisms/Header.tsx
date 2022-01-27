@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from "react";
-import {
-    AppBar,
-    Toolbar,
-    CssBaseline,
-    Typography,
+import {    
+    Toolbar,    
     Button
 } from "@mui/material";
 import { useLocation } from "react-router-dom";
 import { HashLink as Link } from 'react-router-hash-link';
 import Sidebar from "./Sidebar";
 import useMediaQuery from '@mui/material/useMediaQuery'
-import { createTheme, ThemeProvider, useTheme } from '@mui/material/styles';
 import Ripples from 'react-ripples';
 import routes from '../../util/routes';
 import { Logo } from "../../util/resources";
@@ -19,14 +15,13 @@ const Header = () => {
     const [anchor, setAnchor] = useState<boolean>(false);
     const [linkAdd, setLinkAdd] = useState<string>('/#contactForm');
 
-    const toggleSidebar = () => setAnchor(!anchor);
-    const theme = useTheme();
+    const toggleSidebar = () => setAnchor(!anchor);    
     const isMobile = useMediaQuery('(max-width:1000px)');
     const location = useLocation();
     const [contactColor, setContactColor] = useState('color');
     
     useEffect(() => {
-        if (location.pathname == '/enterprise') {
+        if (location.pathname === '/enterprise') {
             setContactColor('contrast');
             setLinkAdd('/enterprise#contactForm')
         }
@@ -51,7 +46,7 @@ const Header = () => {
                 ) : (<>
                     <div className="flex flex-grow">
                         {routes.map((r: any, key: any) => {
-                            if (!r.show) return;
+                            if (!r.show) return(<></>);
                             return (
                                 <Link key={key} to={r.path} className="text-slate-900 hover:text-slate-900 px-4 pt-1 font-bold mx-4">
                                     {r.title}

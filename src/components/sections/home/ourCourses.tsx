@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import CoursesGrid from '../../molecules/CoursesGrid';
-import { Fl, Dl, Mew, Cs } from '../../../util/resources';
 import { getCourses } from '../../../util/api';
 import Alert from '@mui/material/Alert';
 
