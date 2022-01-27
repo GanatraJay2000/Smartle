@@ -11,12 +11,15 @@ import Radio from '@mui/material/Radio';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import FormHelperText from '@mui/material/FormHelperText';
+import Button from '@mui/material/Button';
 
 
 interface Props{
     fields: any;
+    color?: any;
+    btnColor?: any;
 }
-const ContactForm = ({ fields }: Props) => {
+const ContactForm = ({ fields, color='bg-accent-200', btnColor='bg-color-400' }: Props) => {
     const [isSubmitted, setSubmitted] = useState(false);
     const [fail, setFail] = useState<string | undefined>(undefined);
     const [initValues, setInitValues] = useState<Record<string, any> | undefined>(undefined);
@@ -56,15 +59,15 @@ const ContactForm = ({ fields }: Props) => {
                     }}
                 >
                     {({ errors, touched, values, isSubmitting, handleChange, handleBlur, setFieldValue, setFieldTouched }) => (<>                        
-                        <Form className='flex flex-wrap'>
+                        <Form className='contactForm'>
+                            <div className={`w-full mb-7 ${color} rounded-lg transition hover:shadow-lg shadow-md flex flex-wrap p-5`}>
                             {
                                 fields.map((f: any, idx: number) => {
                                     var labelName = cleanText(f.label) as string;
                                     return (<div key={idx} className={`${f.extraClass ?? 'mt-6'} px-4 w-${f.width ?? 'full'}`}>
                                         {
                                             ['text'].includes(f.type) && f.multiline==true ? (
-                                                <TextField
-                                                    className="bg-white"
+                                                <TextField                                                        
                                                     multiline    
                                                     rows={4}
                                                     fullWidth                                                    
@@ -80,8 +83,7 @@ const ContactForm = ({ fields }: Props) => {
                                                     variant="outlined">                                                
                                                 </TextField>                                                    
                                             ) :['text', 'input', 'string', 'email', 'number'].includes(f.type) ? (
-                                                    <TextField     
-                                                    className="bg-white"        
+                                                    <TextField                                                         
                                                     fullWidth                                                    
                                                     helperText={
                                                         Boolean(touched[labelName]) && Boolean(errors[labelName]) && (cleanText(errors[labelName] as string, true) as string)?.toUpperCase()
@@ -96,8 +98,7 @@ const ContactForm = ({ fields }: Props) => {
                                                     variant="outlined">                                                
                                                 </TextField>
                                             ) : ['select'].includes(f.type) ? (
-                                                    <TextField        
-                                                    className="bg-white"            
+                                                <TextField                                                                
                                                     fullWidth    
                                                     select
                                                     helperText={
@@ -143,14 +144,15 @@ const ContactForm = ({ fields }: Props) => {
                                         }                                            
                                     </div>);
                                 })
-                            }                            
-                            <button
+                                }    
+                            </div>    
+                            <Button
                                 type='submit'
-                                className='bg-color-400 text-white w-full py-3 rounded-md mx-4 mb-6'
+                                className={`font-bold text-xl text-white w-full py-3 rounded-md mb-6 ${btnColor}`}
                                 disabled={isSubmitting}	                               
 							>
 								Submit Form
-							</button>
+							</Button>
                         </Form>
                     </>)}
                     

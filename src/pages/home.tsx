@@ -11,10 +11,10 @@ const Home = () => {
       <Banner />    
       <OurCourses />  
       <Method />  
-      <div className="py-20">
+      <div className="pt-10">
         <Features />  
       </div>
-      <div className="py-16">
+      <div className="pt-10">
         <Why />
       </div>
       <div className="pb-20">

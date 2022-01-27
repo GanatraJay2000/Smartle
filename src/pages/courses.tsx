@@ -27,9 +27,9 @@ const Courses = () => {
   }, [])
 
   useEffect(() => {
-    if (!isNull(courses) && !isNull(ogCourses)) {
-      let lclCourses = { ...ogCourses };      
-      if (!isNull(filterValue)) setCourses(lclCourses);
+    if (!isNull(courses) && !isNull(ogCourses)) {      
+      let lclCourses = [ ...ogCourses ];
+      if (!isNull(filterValue)) setCourses(lclCourses);            
       (async () => {
         let newlist  = await lclCourses?.filter(
           (course: any) => course.title?.toLowerCase().includes(filterValue?.toLowerCase())
@@ -39,24 +39,27 @@ const Courses = () => {
         setUpdateCourses(updateCourses+1)
       })();
     }
-  }, [filterValue]);  
+  }, [filterValue]);
+  
+
   useEffect(() => {
-    if (!isNull(filterAge) && !isNull(courses) && !isNull(ogCourses)) {
-      let lclCourses = { ...ogCourses };
+    if (!isNull(filterAge) && !isNull(ogCourses)) {
+      let lclCourses = [ ...ogCourses ];      
       (async () => {
         let newlist = await lclCourses?.filter(
           (course: any) => course.age?.toLowerCase().includes(filterAge?.toLowerCase())
-        )
-        lclCourses = newlist;
+          )
+          lclCourses = newlist;          
         setCourses(lclCourses);
         setUpdateCourses(updateCourses + 1)
       })();
     }
   }, [filterAge]); 
 
+
   return (<>
     <GradientBlobT />    
-    <div className="md:w-8/12 mx-auto">
+    <div className="md:w-8/12 mx-auto pb-20">
       <h2 className="text-3xl font-black pt-40 text-center">Explore our courses</h2>
       <p className="text-xl text-center mt-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id duis eu quis egestas. Turpis at fusce a vel aenean urna, eget nulla. Id duis eu quis egestas. Turpis at fusce a vel aenean urna, eget nulla.</p>
       <div className="filter mt-16">

@@ -6,3 +6,7 @@ export const Demo = require('./demo.png');
 export const Demo2 = require('./2demo.png');
 export const Demo3 = require('./3demo.png');
 export const BoyDab = require('./boyDab.png');
+export const EnterpriseBannerGuy = require('./enterpriseBannerGuy.png');
+export const Icon = require('./icon.png');
+export const Icon2 = require('./icon.svg');
+export const Logo = require('./logo.svg');

@@ -18,9 +18,10 @@ const OurCourses = () => {
 				setFail(e.message);
 			}
 		})();
-  }, [])
+    }, [])
+  
   return (
-    <div className='pt-16'>
+    <div className=''>
       {
         courses && (<>
           <h2 className='font-black text-5xl text-center'>Our Courses</h2>

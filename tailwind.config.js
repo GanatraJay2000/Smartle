@@ -18,6 +18,12 @@ module.exports = {
         'accent': {          
           200: '#F9EDF5',
           400: '#F9C1EB'
+        },
+        'contrast': {
+          400:'#5290F2',
+        }, 
+        'contrastAccent': {
+          200: '#FFF8F0',
         }
       },
     },

@@ -27,7 +27,7 @@ const Method = () => {
     <div className='pt-16'>
       <h2 className='font-black text-5xl text-center'>4C’s Methodology</h2>
       <p className='text-xl text-center w-11/12 mx-auto mt-8'>The 4 C’s for the 21st Century Skills are vital to a thriving learning environment to prepare young learners for the future.</p>
-      <div className="w-full  my-20 flex justify-center items-center">
+      <div className="w-full  mt-20 mb-10 flex justify-center items-center">
         <div className="relative mb-10" style={{ height: '25rem', width:'32rem'}}>
           <div className="h-full w-full flex gap-2 cursor-pointer"> 
             <div className="w-6/12 gap-2 flex flex-col ">
