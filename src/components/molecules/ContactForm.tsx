@@ -49,10 +49,9 @@ const ContactForm = ({ fields, color='bg-accent-200', btnColor='bg-color-400' }:
                     initialValues={initValues as any}
                     validationSchema={validation as any}
                     onSubmit={async (values, { setSubmitting }) => { 
-                        try {                            
-                            console.log(values);
+                        try {                                                        
                             setSubmitting(false);
-							setSubmitted(true);
+                            setSubmitted(true);                            
                         } catch (e: any) {
                             setFail(e.message);                            
                         }
@@ -148,10 +147,10 @@ const ContactForm = ({ fields, color='bg-accent-200', btnColor='bg-color-400' }:
                             </div>    
                             <Button
                                 type='submit'
-                                className={`font-bold text-xl text-white w-full py-3 rounded-md mb-6 ${btnColor}`}
+                                className={`font-bold hover:shadow-lg shadow-md text-xl text-white w-full py-3 rounded-md mb-6 ${btnColor}`}
                                 disabled={isSubmitting}	                               
 							>
-								Submit Form
+								Contact us
 							</Button>
                         </Form>
                     </>)}

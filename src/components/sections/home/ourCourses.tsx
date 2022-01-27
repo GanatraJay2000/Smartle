@@ -10,8 +10,7 @@ const OurCourses = () => {
     useEffect(() => {
     ( () => {
 			try {
-        var data = getCourses();
-        console.log(data);
+        var data = getCourses();        
 				setCourses(data);				
 			} catch (e: any) {
 				setFail(e.message);

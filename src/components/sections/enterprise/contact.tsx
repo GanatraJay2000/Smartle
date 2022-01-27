@@ -26,11 +26,16 @@ const Contact = () => {
       required: true,
       type: 'multiradio',            
       children: [
-        {label:'Parent', value:'Parent'},
-        {label:'School', value:'School'},
-        {label:'Instructor / Coach', value:'Instructor / Coach'},
+        {label:'Company', value:'Company'},
+        {label:'School', value:'School'},        
       ],      
     },    
+    {
+      label: "Company / School",
+      required: true,
+      type: 'text',
+      extraClass:''
+    },  
     {
       label: "Breif Message",
       required: true,

@@ -2,13 +2,11 @@ export function isNull(item: any) {
     if (item == null) return true;
     if (item === undefined) return true;
     let type = typeof item;    
-    if (type === 'object' && !Array.isArray(item)) {
-        // console.log("object")
+    if (type === 'object' && !Array.isArray(item)) {        
         if (!item) return true;
         if (Object.keys(item).length === 0) return true;
         else return false;
-    } else {        
-        // console.log("not object")
+    } else {                
         if (!item) return true;
         if (item == null) return true;
         if (item === []) return true;
