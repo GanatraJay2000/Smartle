@@ -3,15 +3,16 @@ import Stack from '@mui/material/Stack';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Socials from '../molecules/Socials';
+import { Logo } from "../../util/resources";
 
 const Footer = ()=> {
   return (
     <footer className='bg-stone-800 text-white'>
       <div className="w-10/12 mx-auto pt-8 pb-4">
-        <div className="mb-10">
-          <Button className="bg-[#e5e5e5] inline-block text-slate-500 text-2xl px-6 py-1 shadow-none rounded-sm">
-            &times;&times;&times;&times;
-          </Button>
+        <div className="mb-10">          
+          <Link to='/'>
+            <img src={Logo.default} alt="" />
+          </Link>
         </div>
         <div className="flex flex-wrap gap-5">
           <div className="w-2/12">
