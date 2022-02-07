@@ -9,4 +9,6 @@ export const BoyDab = require('./boyDab.png');
 export const EnterpriseBannerGuy = require('./enterpriseBannerGuy.png');
 export const Icon = require('./icon.png');
 export const Icon2 = require('./icon.svg');
+export const IconAlt = require('./icon_alt.svg');
 export const Logo = require('./logo.svg');
+export const LogoAlt = require('./logo_alt.svg');

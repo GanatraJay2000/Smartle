@@ -38,7 +38,7 @@ const Contact = () => {
       extraClass:'my-6'
     },    
   ];
-  return <div className='mx-auto'>    
+  return <div className=' relative z-10 mx-auto'>    
     <div className="py-3">
       <ContactForm fields={fields} />
     </div>

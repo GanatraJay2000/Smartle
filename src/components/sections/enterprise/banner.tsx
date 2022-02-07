@@ -11,7 +11,9 @@ const Banner = () => {
         <div className="">
           <h2 className='text-bold text-5xl font-black font-poppins'>Delivering impactful<br />learning solutions</h2>
           <p className='text-xl w-10/12 text-justify mt-8'>Offering world class e-learning content and solutions compatible with industry leading learning management systems</p>
-          <Button className='mt-12 px-48 h-9 text-white bg-contrast-400'></Button>
+          <Button className='mt-12 rounded-xl shadow-xl font-bold py-3 px-24 h-9 text-white bg-contrast-400'>
+              Explore Services
+            </Button>
         </div>
       </div>  
       <div className="select-none w-1/2 h-full relative">

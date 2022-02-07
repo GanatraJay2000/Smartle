@@ -20,7 +20,7 @@ const Sidebar = ({ anchor, toggleSidebar}: Props) => {
         >            
             <div className="w-64 pt-10">
                  {routes.map((r: any, idx:number) => {
-                    if (!r.show) return(<></>);
+                    if (!r.show) return(<React.Fragment key={idx}></React.Fragment>);
                      return (
                         <div className='mb-6' key={idx}>
                             <Link to={r.path} onClick={()=>toggleSidebar()} className="text-slate-400 hover:text-slate-900 px-4 pt-1 font-bold mx-4">

@@ -59,11 +59,11 @@ const ContactForm = ({ fields, color='bg-accent-200', btnColor='bg-color-400' }:
                 >
                     {({ errors, touched, values, isSubmitting, handleChange, handleBlur, setFieldValue, setFieldTouched }) => (<>                        
                         <Form className='contactForm'>
-                            <div className={`w-full mb-7 ${color} rounded-lg transition hover:shadow-lg shadow-md flex flex-wrap p-5`}>
+                            <div className={`w-full mb-7 ${color} rounded-lg transition hover:shadow-lg shadow-md flex flex-wrap p-0 md:p-5`}>
                             {
                                 fields.map((f: any, idx: number) => {
                                     var labelName = cleanText(f.label) as string;
-                                    return (<div key={idx} className={`${f.extraClass ?? 'mt-6'} px-4 w-${f.width ?? 'full'}`}>
+                                    return (<div key={idx} className={`${f.extraClass ?? 'mt-6'} px-4 w-full md:w-${f.width ?? 'full'}`}>
                                         {
                                             ['text'].includes(f.type) && f.multiline===true ? (
                                                 <TextField                                                        

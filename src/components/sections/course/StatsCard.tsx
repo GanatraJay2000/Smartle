@@ -5,7 +5,7 @@ interface Props{
 }
 const StatsCard = ({ stats, text }: Props) => {
     return (<>        
-        <div className="mt-32 mb-20 py-5 bg-accent-200 w-full h-40 rounded-3xl shadow-2xl flex items-center justify-center gap-6">            
+        <div className="relative z-30 mt-32 mb-20 py-5 bg-accent-200 w-full h-40 rounded-3xl shadow-2xl flex items-center justify-center gap-6">            
             {
                 text.length > 0 && text.map((item: { top: string; bottom: string; end: string; start: string; }, itemIdx: number) => {                    
                     return (
