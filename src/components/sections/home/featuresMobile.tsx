@@ -11,9 +11,15 @@ import {
 
 const Features = () => {
   return (
-    <div>
+    <div className="">
+      <img className="absolute mt-16 z-10" src={Feature.default} alt="" />
+      <img
+        className="absolute z-0 mt-16 -translate-y-8"
+        src={FeatureOutline.default}
+        alt=""
+      />
       <div       
-        className="overflow-y-hidden  relative border-3 border-red-50"
+        className="overflow-y-hidden z-30 relative border-3 border-red-50"
       >
         <h1 className="text-4xl font-black text-center">Features of Smartle</h1>      
         <div className="mt-10 rounded-3xl shadow-2xl bg-accent-200 w-10/12 mx-auto">

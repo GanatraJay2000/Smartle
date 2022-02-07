@@ -9,7 +9,7 @@ interface Props{
 const CourseGridElement = ({ course }: Props) => {    
     return (  
         <Link to={`/course/${course.slug}`}>
-            <div className='bg-accent-200 rounded-md p-4 h-80 shadow-xl relative max-w-5xl'>
+            <div className='bg-accent-200 rounded-lg p-4 h-80 shadow-xl relative w-60 mx-auto'>
                 {
                     course.credits ? (<>
                         <img src={CreditsTag.default} alt="Credits" className='absolute -top-2 -right-2' />
