@@ -23,7 +23,7 @@ const Instructor = ({instructor}:Props) => {
         <div className='mt-30 pb-32 flex flex-wrap gap-5 overflow-y-hidden'>
             <div className="w-4/12 relative ">
                 <GradientBlobBL classes="-top-8 left-0" />
-                <PopOutCircle image={instructor.image} imagePos="0% 35%" />
+                <PopOutCircle circleShadow='' circleBg='transparent' image={instructor.image} imagePos="0% 35%" />
             </div>
             <div className="w-7/12 my-10 ">
                 <h1 className="font-black text-xl">Instructor</h1>

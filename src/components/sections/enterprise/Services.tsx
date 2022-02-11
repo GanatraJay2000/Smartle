@@ -1,7 +1,11 @@
 import React from 'react';
 import { ListIcon1, ListIcon2, ListIcon3, ListIcon4, ListIcon5 } from '../../../util/resources'
-import { Fade } from 'react-slideshow-image';
-import 'react-slideshow-image/dist/styles.css'
+// import { Fade } from 'react-slideshow-image';
+// import 'react-slideshow-image/dist/styles.css'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const slideImages = [
   '/images/courses/cs.png',
@@ -48,15 +52,33 @@ const Services = () => {
       <div className="flex flex-wrap">
         <div className="w-1/2 bg-slate-100 py-5 pr-5 shadow-xl rounded-r-3xl">
           <div className="bg-contrastAccent-200 w-full flex justify-center items-center h-full px -5 rounded-r-3xl">
-            <div className="w-4/5 h-4/5 rounded-3xl">
-              <Fade
-                indicators={true}
-                arrows={false} easing="ease" className="h-full">
-                <img src={slideImages[0]} className='w-full h-full  rounded-3xl' alt="" />
-                <img src={slideImages[1]} className='w-full h-full  rounded-3xl' alt="" />
-                <img src={slideImages[2]} className='w-full h-full  rounded-3xl' alt="" />
-                <img src={slideImages[3]} className='w-full h-full  rounded-3xl' alt="" />
-              </Fade>
+            <div className="w-4/5 rounded-3xl">
+              <div className="">
+                <Swiper
+                  modules={[Pagination, Autoplay]}
+                  spaceBetween={20}
+                  slidesPerView={1}
+                  onSlideChange={() => console.log('slide change')}
+                  onSwiper={(swiper) => console.log(swiper)}
+                  pagination={{clickable: true,}}
+                  loop={true}
+                  autoplay={{ delay: 3500 }}
+                  className="pb-6"
+                >
+                  <SwiperSlide>
+                    <img src={slideImages[0]} className='w-full h-full  rounded-lg' alt="" />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img src={slideImages[1]} className='w-full h-full  rounded-lg' alt="" />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img src={slideImages[2]} className='w-full h-full  rounded-lg' alt="" />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img src={slideImages[3]} className='w-full h-full  rounded-lg' alt="" />
+                  </SwiperSlide>
+                </Swiper>
+              </div>
             </div>
           </div>          
         </div>

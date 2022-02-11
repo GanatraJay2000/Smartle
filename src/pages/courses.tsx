@@ -16,7 +16,7 @@ const Courses = () => {
   useEffect(() => {
     ( () => {
 			try {
-				var data =  getCourses('show', '1', '=');
+				var data =  getCourses();
 				setCourses(data);
 				setOgCourses(data);
 			} catch (e: any) {
@@ -83,13 +83,13 @@ const Courses = () => {
         <div className="flex justify-center mx-auto">
           <div
           onClick={()=>{setFilterAge('8-10')}}
-          className={`${filterAge === '8-10' ? 'bg-accent-400 border-2 border-accent-400':'bg-white border-2 border-accent-400'} mx-5 cursor-pointer px-6 py-1 rounded shadow-lg font-bold`}>8-10 Yrs</div>
+          className={`${filterAge === '8-10' ? 'dark:text-white border-2 border-accent-400':'bg-white border-2 border-accent-400'} text-slate-900  mx-5 cursor-pointer px-6 py-1 rounded shadow-lg font-bold`}>8-10 Yrs</div>
           <div
           onClick={()=>{setFilterAge('11-12')}}
-          className={`${filterAge === '11-12' ? 'bg-accent-400 border-2 border-accent-400':'bg-white border-2 border-accent-400'} mx-5 cursor-pointer px-6 py-1 rounded shadow-lg font-bold`}>11-12 Yrs</div>
+          className={`${filterAge === '11-12' ? 'dark:text-white border-2 border-accent-400':'bg-white border-2 border-accent-400'} text-slate-900  mx-5 cursor-pointer px-6 py-1 rounded shadow-lg font-bold`}>11-12 Yrs</div>
           <div
           onClick={()=>{setFilterAge('13-14')}}
-          className={`${filterAge === '13-14' ? 'bg-accent-400 border-2 border-accent-400':'bg-white border-2 border-accent-400'} mx-5 cursor-pointer px-6 py-1 rounded shadow-lg font-bold`}>13-14 Yrs</div>
+          className={`${filterAge === '13-14' ? 'dark:text-white border-2 border-accent-400':'bg-white border-2 border-accent-400'} text-slate-900  mx-5 cursor-pointer px-6 py-1 rounded shadow-lg font-bold`}>13-14 Yrs</div>
         </div>
       </div>
       {

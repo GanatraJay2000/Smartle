@@ -4,6 +4,7 @@ import {
   CSSTransition,
   TransitionGroup,
 } from 'react-transition-group';
+import { isNull } from '../../util/helpers';
 
 interface Props {
     courses: any;
@@ -12,7 +13,7 @@ const CoursesStack = ({ courses }: Props) => {
     return (
         <div className="my-20">
             {
-                courses.length > 0 && (
+                !isNull(courses) && (
                     <TransitionGroup component="div">
                         {
                             courses?.map((item:any, idx:number) => {

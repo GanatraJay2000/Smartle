@@ -19,7 +19,9 @@ const CustTimeline = ({list}:Props) => {
               let showLine = "transition-all hidden";
               if (itemIdx === activeDot) showLine = "transition-all ";                
               return (<React.Fragment key={itemIdx}>
-                <div onClick={() => setActiveDot(itemIdx)} className={`h-5 w-5 bg-color-400 rounded-full ${myDir[1]} cursor-pointer relative`}>
+                <div onClick={() => setActiveDot(itemIdx)}
+                  className={`timelinePoint h-5 w-5 bg-color-400 rounded-full ${myDir[1]} cursor-pointer relative`}
+                >
                   <div className={`absolute ${showLine} w-20 -left-5 ${myDir[2]} font-semibold`}>
                     Week {itemIdx + 1}
                   </div>

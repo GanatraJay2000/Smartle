@@ -38,7 +38,9 @@ const Course = () => {
   }, [course])
 
   return (<>
-    <GradBlobTRSm />
+    <div className="overflow-y-hidden h-full">
+      <GradBlobTRSm />
+    </div>
     {
       !isNull(course) && !isNull(instructor) && !fail ? (<>
           <div className="mx-auto w-10/12 my-12 ">

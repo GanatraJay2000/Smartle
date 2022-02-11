@@ -23,7 +23,7 @@ const Solution = () => {
             desc:'Enabling commenting, discussions and blogs in the LMS platform',
         },
     ];
-    return (<div className='w-10/12 mx-auto my-10'>
+    return (<div className='w-10/12 relative z-10 mx-auto my-10'>
         <h1 className="text-3xl font-extrabold text-center mb-14">Solution Capabilities</h1>
         <div className="flex flex-wrap justify-between">
             {

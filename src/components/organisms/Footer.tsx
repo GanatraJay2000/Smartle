@@ -45,9 +45,9 @@ const Footer = ()=> {
           </div>
         </div>
         <div className='mt-12 mb-4 h-px w-full bg-zinc-500' ></div>
-        <div className="mb-3 flex flex-wrap md:justify-between justify-center">
+        <div className="flex flex-wrap md:justify-between justify-center">
           <div className="text-center">&copy; {new Date().getFullYear() ?? '0000'} - All rights reserved</div>
-          <div className="mt-5">
+          <div className="">
             <Socials />
           </div>
         </div>

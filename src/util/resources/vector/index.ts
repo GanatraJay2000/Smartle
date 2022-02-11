@@ -21,3 +21,4 @@ export const Approaches = require('./approaches.svg');
 export const ApproachesOutlined = require('./approachesOutlined.svg');
 export const BlueBar = require('./blueBar.svg');
 export const TopGrad = require('./TopGrad.png');
+export const TopResp = require('./topResp.png');

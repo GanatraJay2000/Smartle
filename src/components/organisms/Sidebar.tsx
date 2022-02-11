@@ -31,7 +31,7 @@ const Sidebar = ({ anchor, toggleSidebar}: Props) => {
                 })}     
             </div>
         </Drawer>
-        <IconButton onClick={() => toggleSidebar() }>
+        <IconButton className="text-white" onClick={() => toggleSidebar() }>
             <MenuIcon />
         </IconButton>     
     </>);

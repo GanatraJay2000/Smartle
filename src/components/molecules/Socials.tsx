@@ -21,9 +21,9 @@ const Socials = () => {
             <Link to='/'>                
                 <i className={`text-white ${color} text-xl mx-4 bi bi-instagram`}></i>
             </Link>    
-            <Link to='/'>                
+            {/* <Link to='/'>                
                 <i className={`text-white ${color} text-xl mx-4 bi bi-twitter`}></i>
-            </Link>    
+            </Link>     */}
             <Link to='/'>                
                 <i className={`text-white ${color} text-xl mx-4 bi bi-linkedin`}></i>
             </Link>

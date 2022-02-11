@@ -18,7 +18,7 @@ const Banner = () => {
             Fun, social, and safe learning<br className='hidden md:block' /> experiences for ages 8 to14
           </p>
           <Link to='/courses' className=''>
-            <Button className='mt-12 rounded-xl shadow-xl font-bold py-3 px-24 h-9 text-white bg-color-400'>
+            <Button className='mt-12 rounded-xl shadow-xl font-bold py-3 w-full md:w-auto md:px-24 h-9 text-white bg-color-400 '>
               Explore Courses
             </Button>
           </Link>
@@ -31,9 +31,11 @@ const Banner = () => {
         <div className="block md:hidden">
           <PopOutCircle image={BImg} imageSize="2.5" />          
         </div>
-        <img src={Dog} alt="Dogo" style={{top:'15rem'}} className='absolute z-20 left-64 md:left-96 h-24' />
-        <div style={glass} className="font-bold py-4 px-5 text-md h-20 w-80 absolute z-10 top-80 md:left-52">
+        <img src={Dog} alt="Dogo" className='right-0 absolute z-50 h-24 -bottom-28 md:bottom-16 scale-90 md:scale-100' />
+        <div className="w-full flex justify-end absolute md:relative -bottom-40 md:bottom-0">
+        <div style={glass} className="text-slate-900 font-bold py-4 px-5 text-md h-20 w-80 relative z-40 scale-90 md:scale-100">
           Our mentors make learning easy,<br />Explore our courses now!!
+          </div>
         </div>
       </div>
     </div>

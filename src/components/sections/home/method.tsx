@@ -26,8 +26,8 @@ const Method = () => {
   return (
     <div className='pt-16'>
       <h2 className='font-black text-3xl md:text-5xl text-center'>4C’s Methodology</h2>
-      <p className='text-md md:text-xl text-center w-11/12 mx-auto mt-4 md:mt-8'>The 4 C’s for the 21st Century Skills are vital to a thriving learning environment to prepare young learners for the future.</p>
-      <div className="hidden w-full  mt-20 mb-10 md:flex justify-center items-center">
+      <p className='text-md md:text-xl text-center md:w-11/12 mx-auto mt-4 md:mt-8'>The 4 C’s for the 21st Century Skills are vital to a thriving learning environment to prepare young learners for the future.</p>
+      <div className="scale-50 md:scale-100 md:w-full mt-20 mb-10 md:flex md:justify-center md:items-center">
         <div className="relative mb-10" style={{ height: '25rem', width:'32rem'}}>
           <div className="h-full w-full flex gap-2 cursor-pointer"> 
             <div className="w-6/12 gap-2 flex flex-col ">
@@ -38,7 +38,7 @@ const Method = () => {
                 </div>
               </div>
               <div className="w-full h-56 flex justify-end items-start">
-                <div className={`bg-accent-400 rounded-xl transition-all ${activeMeth === 'com' ? 'h-4/5 w-full text-3xl' : 'text-xl h-3/5 w-10/12'} hover:w-full hover:h-4/5 shadow flex justify-center items-center font-bold  hover:text-3xl p-3`}
+                <div className={`text-slate-900 bg-accent-400 rounded-xl transition-all ${activeMeth === 'com' ? 'h-4/5 w-full text-3xl' : 'text-xl h-3/5 w-10/12'} hover:w-full hover:h-4/5 shadow flex justify-center items-center font-bold  hover:text-3xl p-3`}
                   onClick={()=>setActiveMeth("com")}
                 dangerouslySetInnerHTML={{ __html: meth['com'].title }}>                  
                 </div>
@@ -46,14 +46,14 @@ const Method = () => {
             </div>  
             <div className="w-6/12 gap-2 flex flex-col ">
               <div className="w-full h-56  flex items-end">
-                <div className={`bg-accent-400  rounded-xl transition-all ${activeMeth === 'col' ? 'h-full w-11/12 text-3xl' : 'h-5/6 w-9/12 text-xl'} hover:w-11/12 hover:h-full shadow flex justify-center items-center font-bold hover:text-3xl p-3`}
+                <div className={`text-slate-900 bg-accent-400  rounded-xl transition-all ${activeMeth === 'col' ? 'h-full w-11/12 text-3xl' : 'h-5/6 w-9/12 text-xl'} hover:w-11/12 hover:h-full shadow flex justify-center items-center font-bold hover:text-3xl p-3`}
                   onClick={()=>setActiveMeth("col")}
                 dangerouslySetInnerHTML={{ __html: meth['col'].title }}>                  
                 </div>
               </div>
               <div className="w-full h-44  flex items-start">
                 <div className={`text-white bg-color-400 rounded-xl transition-all 
-                ${activeMeth === 'cr' ? 'h-full w-11/12 text-3xl' : 'h-5/6 w-9/12 text-xl'} hover:w-11/12 hover:h-full shadow flex justify-center items-center font-bold text-xl hover:text-3xl p-3`}
+                ${activeMeth === 'cr' ? 'h-full w-11/12 text-3xl' : 'h-5/6 w-9/12 text-xl'} hover:w-11/12 hover:h-full shadow flex justify-center items-center font-bold hover:text-3xl p-3`}
                   onClick={()=>setActiveMeth("cr")}
                 dangerouslySetInnerHTML={{ __html: meth['cr'].title }}> 
                 </div>
@@ -65,34 +65,41 @@ const Method = () => {
           </div>
         </div>
       </div>
-      <div className={`hidden md:block rounded-lg mb-20 mx-auto w-11/12`}>
-        <h1 className='font-black text-center text-4xl mb-4'
+      <div className={`rounded-lg mb-20 mx-auto w-11/12`}>
+        <h1 className='font-black text-center text-2xl md:text-4xl mb-4'
           dangerouslySetInnerHTML={{ __html: meth[activeMeth].title.replace("<br/>", "") }}
         ></h1>
-        <p className='text-center text-xl md:px-32 pt-3'
+        <p className='text-center md:text-xl md:px-32 pt-3'
             dangerouslySetInnerHTML={{ __html: meth[activeMeth].text }}
         ></p>
-      </div>
-      <div className="block md:hidden">
-        {
-          Object.values(meth).map((a: any, methIdx: any) => {
-            let classes = "bg-color-400 text-white";
-            if (methIdx % 2 === 0) classes = "bg-accent-400";            
-            return (
-              <div key={methIdx} className={`rounded-lg my-5 p-5 ${classes} mx-auto w-11/12`}>
-                <h1 className='font-black text-center text-2xl md:text-4xl mb-4'
-                  dangerouslySetInnerHTML={{ __html: a.title?.replace("<br/>", "") }}
-                ></h1>
-                <p className='text-regular text-justify md:px-32 pt-3'
-                    dangerouslySetInnerHTML={{ __html: a.text }}
-                ></p>
-              </div>  
-            )
-          })
-        }                
       </div>
     </div>
   );
 }
 
 export default Method;
+
+
+
+/* 
+
+<div className="block md:hidden">
+  {
+    Object.values(meth).map((a: any, methIdx: any) => {
+      let classes = "bg-color-400 text-white";
+      if (methIdx % 2 === 0) classes = "bg-accent-400";            
+      return (
+        <div key={methIdx} className={`rounded-lg my-5 p-5 ${classes} mx-auto w-11/12`}>
+          <h1 className='font-black text-center text-2xl md:text-4xl mb-4'
+            dangerouslySetInnerHTML={{ __html: a.title?.replace("<br/>", "") }}
+          ></h1>
+          <p className='text-regular text-justify md:px-32 pt-3'
+              dangerouslySetInnerHTML={{ __html: a.text }}
+          ></p>
+        </div>  
+      )
+    })
+  }                
+</div>
+
+*/
