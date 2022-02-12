@@ -43,16 +43,15 @@ const Course = () => {
     </div>
     {
       !isNull(course) && !isNull(instructor) && !fail ? (<>
-          <div className="mx-auto w-10/12 my-12 ">
+          <div className="mx-auto w-10/12 mt-12 ">
             <Banner course={course} />
           <StatsCard
             stats={course.stats}
             text={course.statsText} />
-          <Curriculum curr={course.curriculum} />   
-          <CustTimeline list={course.timeline} />
+          {course.self_paced ? (<Curriculum curr={course.curriculum} />) : (<CustTimeline list={course.timeline} />)}
           </div>
-        <Instructor instructor={instructor} />
-        <CourseCTA />
+          <Instructor instructor={instructor} />
+          <CourseCTA />
         </>) : (
         <div style={{ marginTop: '40vh', textAlign: 'center' }}>
             <CircularProgress color="secondary" />            

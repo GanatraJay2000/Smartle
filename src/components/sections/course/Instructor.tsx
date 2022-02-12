@@ -19,9 +19,10 @@ interface Props{
 }
 
 const Instructor = ({instructor}:Props) => {
-    return (
+    return (<div className=''>
+        <h1 className="text-4xl font-black text-center mb-20">Meet your Instructor</h1>
         <div className='mt-30 pb-32 flex flex-wrap gap-5 overflow-y-hidden'>
-            <div className="w-4/12 relative ">
+            <div className="w-4/12 relative">
                 <GradientBlobBL classes="-top-8 left-0" />
                 <PopOutCircle circleShadow='' circleBg='transparent' image={instructor.image} imagePos="0% 35%" />
             </div>
@@ -46,7 +47,7 @@ const Instructor = ({instructor}:Props) => {
                 <p className="text-lg "><span className='font-bold font-poppins'>Instructor availability:</span> {instructor.availability}</p>
             </div>
         </div>        
-    );
+    </div>);
 }
 
 export default Instructor;

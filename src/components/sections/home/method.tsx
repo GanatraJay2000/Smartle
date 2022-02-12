@@ -27,9 +27,10 @@ const Method = () => {
     <div className='pt-16'>
       <h2 className='font-black text-3xl md:text-5xl text-center'>4C’s Methodology</h2>
       <p className='text-md md:text-xl text-center md:w-11/12 mx-auto mt-4 md:mt-8'>The 4 C’s for the 21st Century Skills are vital to a thriving learning environment to prepare young learners for the future.</p>
-      <div className="scale-50 md:scale-100 md:w-full mt-20 mb-10 md:flex md:justify-center md:items-center">
+      
+<div className="-translate-x-10 sm:translate-x-0 scale-50 md:scale-100 md:w-full mt-20 mb-10 sm:flex sm:justify-center sm:items-center">
         <div className="relative mb-10" style={{ height: '25rem', width:'32rem'}}>
-          <div className="h-full w-full flex gap-2 cursor-pointer"> 
+          <div className="h-full w-full flex gap-2 md:cursor-pointer"> 
             <div className="w-6/12 gap-2 flex flex-col ">
               <div className="w-full h-44 flex items-end justify-end">
                 <div className={`text-white bg-color-400 rounded-xl transition-all ${activeMeth === 'ct' ? 'h-full w-full text-3xl' : 'h-40 w-11/12 text-xl'} hover:w-full hover:h-full shadow flex justify-center items-center font-bold  text-center p-3 hover:text-3xl`}
@@ -65,6 +66,7 @@ const Method = () => {
           </div>
         </div>
       </div>
+
       <div className={`rounded-lg mb-20 mx-auto w-11/12`}>
         <h1 className='font-black text-center text-2xl md:text-4xl mb-4'
           dangerouslySetInnerHTML={{ __html: meth[activeMeth].title.replace("<br/>", "") }}
@@ -80,26 +82,53 @@ const Method = () => {
 export default Method;
 
 
-
 /* 
+<div className="h-96 mt-10 mb-20 w-full flex justify-center items-center">
+        <div className="scale-75 h-96 md:w-1/2 flex gap-3 font-bold">
+          <div className="w-1/2 h-full flex gap-3 flex-col" >
+            <div className="h-3/6 flex justify-end items-end">
+              <div
+                onClick={()=>setActiveMeth("ct")}
+                className={`cursor-pointer transition-all text-white bg-color-400 rounded-lg flex justify-center items-center
+              ${activeMeth === 'ct' ? 'h-full w-10/12 text-3xl' : 'w-9/12 h-5/6 text-xl'} hover:text-3xl hover:w-10/12 hover:h-full`}
+                 dangerouslySetInnerHTML={{ __html: meth['ct'].title }}
+              ></div>
+            </div> 
+            <div className="h-3/6 flex justify-end items-start ">
+              <div
+                onClick={()=>setActiveMeth("com")}
+                className={`cursor-pointer transition-all text-slate-900 bg-accent-400 rounded-lg flex justify-center items-center
+              ${activeMeth === 'com' ? 'w-9/12 h-4/5 text-3xl' : 'w-8/12 h-2/3 text-xl'} hover:text-3xl hover:w-9/12 hover:h-4/5`}
+                 dangerouslySetInnerHTML={{ __html: meth['com'].title }}
+              ></div>
+            </div> 
+          </div>
+          <div className="w-1/2 h-full mt-6 flex flex-col gap-3" >
+            <div className="h-4/6 flex justify-start items-end">
+              <div
+                onClick={()=>setActiveMeth("col")}
+                className={`cursor-pointer transition-all text-slate-900 bg-accent-400 rounded-lg flex justify-center items-center
+              ${activeMeth === 'col' ? 'w-8/12 h-full text-3xl' : 'w-7/12 h-5/6 text-xl'} hover:text-3xl hover:w-8/12 hover:h-full`}
+                 dangerouslySetInnerHTML={{ __html: meth['col'].title }}
+              ></div>
+            </div>
+            <div className="h-3/6 flex justify-start items-start">
+              <div
+                onClick={()=>setActiveMeth("cr")}
+                className={`cursor-pointer transition-all text-white bg-color-400 rounded-lg flex justify-center items-center
+              ${activeMeth === 'cr' ? 'w-8/12 h-5/6 text-3xl' : 'w-7/12 h-4/6 text-xl'} hover:text-3xl hover:w-8/12 hover:h-5/6`}
+                 dangerouslySetInnerHTML={{ __html: meth['cr'].title }}
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<div className="block md:hidden">
-  {
-    Object.values(meth).map((a: any, methIdx: any) => {
-      let classes = "bg-color-400 text-white";
-      if (methIdx % 2 === 0) classes = "bg-accent-400";            
-      return (
-        <div key={methIdx} className={`rounded-lg my-5 p-5 ${classes} mx-auto w-11/12`}>
-          <h1 className='font-black text-center text-2xl md:text-4xl mb-4'
-            dangerouslySetInnerHTML={{ __html: a.title?.replace("<br/>", "") }}
-          ></h1>
-          <p className='text-regular text-justify md:px-32 pt-3'
-              dangerouslySetInnerHTML={{ __html: a.text }}
-          ></p>
-        </div>  
-      )
-    })
-  }                
-</div>
+*/
+
+
+/*
+
+
 
 */

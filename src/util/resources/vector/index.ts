@@ -1,6 +1,7 @@
 export const Ellipse1 = require('./ellipse1.svg');
 export const FeatureOutline = require('./feature_outline.svg');
 export const Feature = require('./feature.svg');
+export const FeatureMobile = require('./FeatureMobile.svg');
 export const TopLeftGrad = require('./topLeftGrad.svg');
 export const TopRightGrad = require('./topRightGrad.svg');
 export const Tri = require('./tri.svg');

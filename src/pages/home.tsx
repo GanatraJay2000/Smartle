@@ -13,14 +13,15 @@ const Home = () => {
       <Banner />    
       <OurCourses />  
       <Method />  
-      <div className="pt-10">
+      <Features />
+      {/* <div className="pt-10">
         <div className="hidden md:block">
           <Features />  
         </div>
         <div className="block md:hidden">
           <FeaturesMobile />  
         </div>
-      </div>
+      </div> */}
       <div className="pt-10">
         <Why />
       </div>          <h1 className="text-3xl md:text-5xl text-center mb-10 font-black">Get in touch with us</h1>

@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Feature,
+  FeatureMobile,
   FeatureOutline,
   Book,
   Boy,
@@ -13,17 +14,17 @@ import FeatureBox from "../../atom/FeatureBox";
 const Features = () => {
   return (
     <div className="">
-      <img className="absolute mt-16 z-10" src={Feature.default} alt="" />
+      <img className="hidden md:absolute mt-16 z-10" src={Feature.default} alt="" />
+      <img className="absolute md:hidden mt-16 z-10" src={FeatureMobile.default} alt="" />
       <img
-        className="absolute z-0 mt-16 -translate-y-8"
+        className="hidden md:absolute z-0 mt-16 -translate-y-8"
         src={FeatureOutline.default}
         alt=""
       />
       <div       
-        className="overflow-y-hidden z-30 relative border-3 border-red-50"
+        className="overflow-y-hidden z-30 relative border-3"
       >
         <h1 className="text-4xl font-black text-center">Features of Smartle</h1>    
-        
         <FeatureBox
           pos="left-8 top-20"
           img={Book}
