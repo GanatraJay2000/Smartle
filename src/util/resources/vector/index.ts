@@ -4,6 +4,7 @@ export const Feature = require('./feature.svg');
 export const FeatureMobile = require('./FeatureMobile.svg');
 export const TopLeftGrad = require('./topLeftGrad.svg');
 export const TopRightGrad = require('./topRightGrad.svg');
+export const TopRightGradPng = require('./topRightGrad.png');
 export const Tri = require('./tri.svg');
 export const TriPng = require('./tri.png');
 export const CreditsTag = require('./credits.svg');

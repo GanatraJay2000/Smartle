@@ -4,7 +4,7 @@ import GradientBlobBL from '../components/atom/GradientBlobBL';
 import GradientBlobTR from '../components/atom/GradientBlobTR';
 import PopOutCircle from '../components/atom/PopOutCircle';
 import { Banner, Contact, Features, FeaturesMobile, Method, OurCourses, Why } from '../components/sections/home';
-import { BoyDab as BImg } from '../util/resources';
+import { BoyDab as BImg, TopRightGradPng } from '../util/resources';
 
 const Home = () => {
   return (<>
@@ -38,7 +38,8 @@ const Home = () => {
         </div>
       </div>
       <div className="md:block hidden">
-        <GradientBlobTR />
+        <img className="absolute top-0 right-0 overflow-x-hidden" style={{height:'220vh'}}  src={TopRightGradPng} alt=""/>
+        {/* <GradientBlobTR /> */}
         <GradientBlobBL />
       </div>
     </div>
