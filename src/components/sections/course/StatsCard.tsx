@@ -12,7 +12,7 @@ const StatsCard = ({ stats, text }: Props) => {
                         <React.Fragment key={itemIdx}>
                             <div className="w-40 text-center mt-2">
                                 <p>{item.top ?? '\u00A0' }</p>
-                                <div className="font-black text-5xl text-center text-color-400">
+                                <div className={`font-black ${stats[itemIdx] == 'Self Paced' ? 'text-2xl' : 'text-5xl'} text-center text-color-400`}>
                                     <span className='text-3xl'>{item.start ?? ""}</span>
                                     {stats[itemIdx]}
                                     <span className='text-3xl'>{item.end ?? ""}</span></div>

@@ -7,11 +7,11 @@ interface Props{
     width?: string;
 }
 
-const CourseGridElement = ({ course, width='w-3/12' }: Props) => {
+const CourseGridElement = ({ course, width='sm:w-1/2 md:w-1/3 lg:w-3/12' }: Props) => {
     return (
         <div className={`${width} md:p-3`}>
             <Link className={` `} to={`/course/${course.slug}`}>
-                <div className={`bg-accent-200 rounded-lg p-4 w-full h-80 shadow-xl relative max-w-10 mx-auto`}>
+                <div style={{height:'22rem'}}  className={`bg-accent-200 rounded-lg p-4 w-full shadow-xl relative mx-auto`}>
                     {
                         course.credits ? (<>
                             <img src={CreditsTag.default} alt="Credits" className='absolute z-10 -top-2 -right-2' />

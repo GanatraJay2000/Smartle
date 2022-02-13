@@ -1,8 +1,10 @@
 import Button from '@mui/material/Button';
 import React from 'react';
 import RegisterInterestModal from '../../organisms/RegisterInterestModal';
-
-const CourseCTA = () => {
+interface Props{
+    courseId: any;
+}
+const CourseCTA = ({courseId}:Props) => {
     const [openInterest, setOpenInterest] = React.useState(false);
     const handleOpenInterest = () => setOpenInterest(true);
     const handleCloseInterest = () => setOpenInterest(false);
@@ -12,7 +14,7 @@ const CourseCTA = () => {
             <div className="w-10/12 mx-auto">
                 <div className="text-cener pb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia tempore alias impedit quasi eligendi, dolorum ullam non provident quod </div>
                 <div className="flex justify-center gap-4">
-                    <RegisterInterestModal openInterest={openInterest} handleCloseInterest={handleCloseInterest} />
+                    <RegisterInterestModal courseId={courseId} openInterest={openInterest} handleCloseInterest={handleCloseInterest} />
                     <Button
                         onClick={handleOpenInterest} 
                         className='px-14 py-2 text-white bg-color-400 font-bold rounded-xl'>Register Your Interest</Button>

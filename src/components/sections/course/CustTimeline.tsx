@@ -41,7 +41,7 @@ const CustTimeline = ({ list }: Props) => {
       <div className="absolute top-full -translate-y-16 left-1/2 -translate-x-2/4 right-0 bg-color-200 rounded-3xl shadow-2xl w-10/12 py-5">
         <Transition index={list[activeDot]}>
             <div className="h1 text-center font-bold text-2xl">{activeDot}</div>
-            <div className="text-center px-24 mt-3 pb-3 font-medium">{list[activeDot]}</div>
+            <div className="text-center px-16 mt-3 pb-3 font-medium">{list[activeDot]}</div>
         </Transition>
       </div>
     </div>

@@ -5,14 +5,23 @@ import ContactForm from '../molecules/ContactForm';
 interface Props{
     openInterest: any;
     handleCloseInterest: any;
+    courseId: any;
 }
-const RegisterInterestModal = ({ openInterest, handleCloseInterest }: Props) => {
+const RegisterInterestModal = ({ courseId, openInterest, handleCloseInterest }: Props) => {
     let fields:any = [   
         {
             label: "Email Address",
             required: true,
+            show:true,
             type: 'email',    
-        },    
+        },  
+        {
+            label: "Course Id",
+            type: 'text',
+            show: false,
+            savedValue: courseId
+
+        }
     ];
     
     return (

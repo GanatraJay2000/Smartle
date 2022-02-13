@@ -1,5 +1,6 @@
 import React from 'react';
 import GradBlobResp from '../components/atom/GradBlobResp';
+import GradBlobTRSm from '../components/atom/GradBlobTRSm';
 import GradientBlobBL from '../components/atom/GradientBlobBL';
 import GradientBlobTR from '../components/atom/GradientBlobTR';
 import PopOutCircle from '../components/atom/PopOutCircle';
@@ -14,17 +15,10 @@ const Home = () => {
       <OurCourses />  
       <Method />  
       <Features />
-      {/* <div className="pt-10">
-        <div className="hidden md:block">
-          <Features />  
-        </div>
-        <div className="block md:hidden">
-          <FeaturesMobile />  
-        </div>
-      </div> */}
       <div className="pt-10">
         <Why />
-      </div>          <h1 className="text-3xl md:text-5xl text-center mb-10 font-black">Get in touch with us</h1>
+      </div>
+      <h1 className="text-3xl md:text-5xl text-center mb-10 font-black">Get in touch with us</h1>
       <div className="pb-20">
         <div className="flex flex-wrap flex-col-reverse md:flex-row w-10/12 mx-auto" >
           <div className="md:w-4/12 md:mr-10 flex items-center justify-center"> 
@@ -39,6 +33,7 @@ const Home = () => {
       </div>
       <div className="md:block hidden">
         <GradientBlobTR />
+        {/* <GradBlobTRSm /> */}
         <GradientBlobBL />
       </div>
     </div>

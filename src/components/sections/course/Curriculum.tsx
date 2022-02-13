@@ -5,20 +5,17 @@ interface Props{
 }
 const Curriculum = ({curr}:Props) => {
   return (<>
-    <div>
+    <div className='mb-20'>
       <h1 className="text-4xl font-black text-center mb-20">Course Carriculum</h1>
       {
         !isNull(curr) && curr.map((cur:any, idx:number) => {
           return (
-            <div className='mb-8' key={idx}>
-              <span className='font-extrabold'>Week {String(idx + 1).padStart(2, '0')}: </span>{cur}
+            <div className='mb-5' key={idx}>
+              <span className='font-extrabold'>{String(idx + 1).padStart(2, '0')}:&nbsp;&nbsp; </span>{cur}
             </div>
           );
         })
-      }
-      <div className="">
-        <span></span>
-      </div>
+      }      
     </div>
   </>);
 }

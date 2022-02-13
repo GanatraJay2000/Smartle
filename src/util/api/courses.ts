@@ -21,7 +21,9 @@ export function getCourses(param?: any, value?: any, compare: any = "=") {
 export function getCourse(id: any, type: any = "slug") {
   let lclCourse = courseList.find((element: any) => element[type] === id);
   if (!lclCourse) return;
+  lclCourse.instructor = getInstructor(lclCourse.instructor_id)
   const course: any = lclCourse;
+  console.log(course);
   return course;
 }
 

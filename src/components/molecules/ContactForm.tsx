@@ -35,7 +35,7 @@ const ContactForm = ({ fields, color='bg-accent-200', btnColor='bg-color-400', c
 
         fields.forEach((f:any, idx:number) => {
             var labelName:string = cleanText(f.label) as string;
-            lclInitValues[labelName] = '';
+            lclInitValues[labelName] = f.savedValue ?? '';
             schemaObj[labelName] = getSchema(labelName, f.required, f.type, Yup)
         })
         setValidation(Yup.object(schemaObj));
@@ -64,8 +64,9 @@ const ContactForm = ({ fields, color='bg-accent-200', btnColor='bg-color-400', c
                         <Form className='contactForm'>
                             <div className={`w-full mb-7 ${color} text-gray-600 font-light transition flex flex-wrap ${classes}`}>
                             {
-                                fields.map((f: any, idx: number) => {
-                                    var labelName = cleanText(f.label) as string;
+                                    fields.map((f: any, idx: number) => {
+                                        if (f.show == false) return;
+                                        var labelName = cleanText(f.label) as string;
                                     return (<div key={idx} className={`${f.extraClass ?? 'mt-6'} ${fieldClasses} w-full md:w-${f.width ?? 'full'}`}>
                                         {
                                             ['text'].includes(f.type) && f.multiline===true ? (

@@ -18,24 +18,14 @@ const Course = () => {
     ( () => {
 			try {
         var data = getCourse(id);
+        // if (!isNull(data)) return;
+        setInstructor(data.instructor);
 				setCourse(data);				
 			} catch (e: any) {
 				setFail(e.message);
 			}
 		})();
   }, [id])
-
-  useEffect(() => {
-    if (isNull(course)) return;
-    ( () => {
-      try {        
-        var data = getInstructor(course.instructor_id);        
-				setInstructor(data);
-			} catch (e: any) {
-				setFail(e.message);
-			}
-		})();
-  }, [course])
 
   return (<>
     <div className="overflow-y-hidden h-full">
@@ -48,10 +38,12 @@ const Course = () => {
           <StatsCard
             stats={course.stats}
             text={course.statsText} />
-          {course.self_paced ? (<Curriculum curr={course.curriculum} />) : (<CustTimeline list={course.timeline} />)}
-          </div>
-          <Instructor instructor={instructor} />
-          <CourseCTA />
+          {course.self_paced ? (<Curriculum curr={Object.values(course.timeline)} />) : (<CustTimeline list={course.timeline} />)}
+        </div>
+        {
+          !course.self_paced && (<Instructor instructor={instructor} />)
+        }
+          <CourseCTA courseId={course.id} />
         </>) : (
         <div style={{ marginTop: '40vh', textAlign: 'center' }}>
             <CircularProgress color="secondary" />            

@@ -59,7 +59,7 @@ const Courses = () => {
   return (<>
     {/* <img src={TopGrad} className="absolute top-0 right-0 left-0 w-full pointer-events-none overflow-x-hidden" alt="" /> */}
     <GradientBlobT />
-    <div className="md:w-8/12 mx-auto pb-20">
+    <div className="md:w-8/12 mx-auto pb-20 relative z-10">
       <h2 className="text-3xl font-black pt-40 text-center">Explore our courses</h2>
       <p className="px-3 md:px-3 text-lg md:text-xl text-center mt-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id duis eu quis egestas. Turpis at fusce a vel aenean urna, eget nulla. Id duis eu quis egestas. Turpis at fusce a vel aenean urna, eget nulla.</p>
       <div className="filter mt-16">

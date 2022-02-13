@@ -32,7 +32,7 @@ const Banner = ({ course }: Props) => {
                 </div>
             </div>
         </Modal>        
-        <RegisterInterestModal openInterest={openInterest} handleCloseInterest={handleCloseInterest} />
+        <RegisterInterestModal courseId={course.id} openInterest={openInterest} handleCloseInterest={handleCloseInterest} />
         <div className="flex flex-wrap">
             <div className="w-1/2 pr-10">
                 <h1 className="font-black text-3xl">{course.title}</h1>
