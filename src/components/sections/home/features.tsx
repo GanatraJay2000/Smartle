@@ -53,7 +53,7 @@ const Features = () => {
   return (
     <div>
       <div        
-        className="featuresContainer overflow-y-hidden relative border-3"
+        className="featuresContainer  z-10 bg-white overflow-y-hidden relative border-3"
       >
         <h1 className="text-5xl font-black text-center">Features of Smartle</h1>
         <img className="hidden sm:block absolute z-20" src={Feature.default} alt="" />
@@ -76,7 +76,7 @@ const Features = () => {
             {
             homeFeatureList.map((f:any, featureidx:any) => {
               return (
-                <SwiperSlide>
+                <SwiperSlide key={f.featureidx}>
                   <div className="h-80 w-full flex justify-center">
                     <FeatureBox
                       pos={f.pos}

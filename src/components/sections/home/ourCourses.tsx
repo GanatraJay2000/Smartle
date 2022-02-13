@@ -18,7 +18,7 @@ const OurCourses = () => {
     useEffect(() => {
     ( () => {
 			try {
-        var data = getCourses();        
+        var data = getCourses("extraShow", 'home', "=");
 				setCourses(data);				
 			} catch (e: any) {
 				setFail(e.message);

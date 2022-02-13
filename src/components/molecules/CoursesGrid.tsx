@@ -8,7 +8,7 @@ interface Props{
 const CoursesGrid = ({courses}:Props) => {
     return (
         <div className="mx-auto">
-            <div className='w-10/12 my-10 mx-auto gap-5 flex flex-wrap items-stretch justify-center'>
+            <div className='w-10/12 my-10 mx-auto flex flex-wrap items-stretch justify-center'>
                 {
                     courses.map((course:any, key:any) => {
                         return (                        

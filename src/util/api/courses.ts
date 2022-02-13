@@ -1,11 +1,12 @@
 // import { base } from '../api';
+import { isNull } from '../helpers';
 import { courseList, instructorList } from './data';
 
 
 export const videoBase = "https://www.youtube.com/embed/";
 
 export function getCourses(param?: any, value?: any, compare: any = "=") {
-  let cl = courseList;
+  let cl = courseList;  
   if (param && value) {
     if (compare === "=") cl = cl.filter((cli: any) => cli[param] == value);
     if (compare === ">") cl = cl.filter((cli: any) => cli[param] > value);

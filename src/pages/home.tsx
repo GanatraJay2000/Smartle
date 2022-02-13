@@ -38,8 +38,7 @@ const Home = () => {
         </div>
       </div>
       <div className="md:block hidden">
-        <img className="absolute top-0 right-0 overflow-x-hidden" style={{height:'220vh'}}  src={TopRightGradPng} alt=""/>
-        {/* <GradientBlobTR /> */}
+        <GradientBlobTR />
         <GradientBlobBL />
       </div>
     </div>

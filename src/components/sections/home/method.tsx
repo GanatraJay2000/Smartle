@@ -24,7 +24,7 @@ const Method = () => {
   };
 
   return (
-    <div className='pt-16'>
+    <div className='pt-16 z-10 relative'>
       <h2 className='font-black text-3xl md:text-5xl text-center'>4C’s Methodology</h2>
       <p className='text-md md:text-xl text-center md:w-11/12 mx-auto mt-4 md:mt-8'>The 4 C’s for the 21st Century Skills are vital to a thriving learning environment to prepare young learners for the future.</p>
       
