@@ -46,7 +46,7 @@ const Footer = ()=> {
         </div>
         <div className='mt-12 mb-4 h-px w-full bg-zinc-500' ></div>
         <div className="flex flex-wrap md:justify-between justify-center">
-          <div className="text-center">&copy; {new Date().getFullYear() ?? '0000'} - All rights reserved</div>
+          <div className="text-center mb-4 md:mb-0">&copy; {new Date().getFullYear() ?? '0000'} - All rights reserved</div>
           <div className="">
             <Socials />
           </div>

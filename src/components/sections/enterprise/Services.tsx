@@ -47,11 +47,11 @@ const Services = () => {
   //   scale: 0.4,
   //   indicators: i => (<div className="indicator">{i + 1}</div>)
   // }
-    return (<div className='my-20'>
-      <h1 className="text-3xl font-extrabold text-center my-10">Services Offered</h1>
+    return (<div className='mb-20 mt-15'>
+      <h1 id="services" className="pt-10 text-3xl font-extrabold text-center my-10">Services Offered</h1>
       <div className="flex flex-wrap">
-        <div className="w-1/2 bg-slate-100 py-5 pr-5 shadow-xl rounded-r-3xl">
-          <div className="bg-contrastAccent-200 w-full flex justify-center items-center h-full px -5 rounded-r-3xl">
+        <div className="w-11/12 md:w-1/2 bg-slate-100 py-3 md:py-5 pr-3 md:pr-5 shadow-xl rounded-r-3xl">
+          <div className="bg-contrastAccent-200 w-full flex justify-center items-center pt-10 pb-6 md:pt-0 md:pb-0 p-2 md:p-0 h-full rounded-r-3xl">
             <div className="w-4/5 rounded-3xl">
               <div className="">
                 <Swiper
@@ -82,20 +82,22 @@ const Services = () => {
             </div>
           </div>          
         </div>
-        <div className="w-1/2">
-          <div className="w-8/12 ml-20 flex flex-wrap items-center">
+        <div className="md:w-1/2 mt-10 md:mt-0">
+          <div className="md:w-8/12 ml-5 md:ml-20 ">
             {
               services.map((service, idx) => {
                 let marginClass = "mb-8";
                 if (idx === services.length - 1) marginClass = "mb-0";
                 return (
-                  <React.Fragment key={idx}>
-                    <div className={`${marginClass} w-1/12 relative flex justify-center`}>
-                      <div className="text-slate-900 absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-xl font-semibold">{service.idx}</div>
-                      <img className='scale-150 -translate-y-1' src={service.icon} alt="" />
+                  <div className={`flex items-center ${marginClass}`} key={idx}>
+                    <div className={`w-1/12 scale-110`}>
+                      <div className={`relative flex justify-center`}>
+                        <div className="text-slate-900 absolute md:top-1/2 md:left-1/2 z-10 md:-translate-x-1/2 md:-translate-y-1/2 md:text-xl font-semibold">{service.idx}</div>
+                        <img className='scale-150 md:-translate-y-1' src={service.icon} alt="" />
+                      </div>
                     </div>
-                    <div className={`${marginClass} ml-10 w-9/12`}>{service.text}</div>
-                  </React.Fragment>
+                    <div className={`ml-6 md:ml-10 w-9/12`}>{service.text}</div>
+                  </div>
                 )
               })
             }            

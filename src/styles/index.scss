@@ -16,28 +16,31 @@ html {
 *:not(i) {
   font-family: "Poppins", sans-serif;
 }
+
 ::-moz-selection {
-  color: var(--scrollBarColor) !important;
+  color: theme("colors.accent.400") !important;
 }
+
 ::selection {
   background-color: theme("colors.accent.400") !important;
   color: theme("colors.slate.900") !important;
 }
 
-/* width */
-::-webkit-scrollbar {
-  width: 16px;
-}
+// /* width */
+// ::-webkit-scrollbar {
+//   width: 14px;
+// }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: transparent;
-}
+// /* Track */
+// ::-webkit-scrollbar-track {
+//   background: transparent;
+// }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: var(--scrollBarColor);
-}
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//   background: var(--scrollBarColor);
+// }
+
 .timeline {
   .timeline-line {
     height: 1px;

@@ -5,11 +5,15 @@ interface Props{
   list: any;
 }
 
+
+
 const CustTimeline = ({ list }: Props) => {
+
   const [activeDot, setActiveDot] = useState<string>((Object.keys(list) as any)[0] as string);
-  return <div className='pb-1'>
+  return <div className='pb-1 relative mb-40'>
     <h1 className="text-4xl font-black text-center mt-32">Learning Journey</h1>
-    <div className="relative timeline mt-16 mb-40 py-5 bg-accent-200 w-full h-60 pb-16 rounded-3xl shadow-2xl flex justify-center items-center">         
+    <div className="overflow-x-scroll md:overflow-x-auto overflow-y-hidden  rounded-t-xl md:rounded-xl mt-16">
+      <div style={{minWidth:'750px'}} className="relative timeline py-5 bg-accent-200 w-full h-60 md:pb-16 rounded-t-xl md:rounded-3xl shadow-2xl flex justify-center items-center">         
     <div className={`w-20 timeline-line line-up`}></div>
       {
         !isNull(list) ? (<>
@@ -38,14 +42,26 @@ const CustTimeline = ({ list }: Props) => {
           <div className="h-5 w-5 bg-color-400 rounded-full"></div>               
         </>)
       }     
-      <div className="absolute top-full -translate-y-16 left-1/2 -translate-x-2/4 right-0 bg-color-200 rounded-3xl shadow-2xl w-10/12 py-5">
+      </div>
+    </div>      
+    <div className="relative md:absolute top-full -translate-y-12 left-1/2 -translate-x-1/2 bg-color-200 rounded-b-xl md:rounded-3xl shadow-2xl md:w-10/12 py-5">
+        <Transition index={list[activeDot]}>
+            <div className="h1 text-center font-bold text-2xl">{activeDot}</div>
+            <div className="text-center px-5 md:px-16 mt-3 pb-3 font-medium">{list[activeDot]}</div>
+        </Transition>
+      </div>
+  </div>;
+}
+
+export default CustTimeline;
+
+
+/* 
+<div className="absolute top-full -translate-y-24 left-1/2 -translate-x-2/4 right-0 bg-color-200 rounded-3xl shadow-2xl w-10/12 py-5">
         <Transition index={list[activeDot]}>
             <div className="h1 text-center font-bold text-2xl">{activeDot}</div>
             <div className="text-center px-16 mt-3 pb-3 font-medium">{list[activeDot]}</div>
         </Transition>
       </div>
-    </div>
-  </div>;
-}
 
-export default CustTimeline;
+*/

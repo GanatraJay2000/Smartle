@@ -44,10 +44,10 @@ const Contact = () => {
       extraClass:'my-6'
     },    
   ];
-  return <div className='mx-auto relative mt-40' id="contactForm">  
-    <h1 className="text-3xl mb-8 font-extrabold text-center">Get in touch with us</h1>
+  return <div className='mx-auto relative md:mt-40' id="contactForm">  
+    <h1 className="text-4xl mb-8 font-extrabold text-center">Get in touch with us</h1>
     <img src={BlueBar.default} className='absolute top-40' alt="" />  
-    <div className="py-3 w-3/5 mx-auto z-10 relative ">
+    <div className="py-3 mx-5 md:mx-auto md:w-3/5 z-10 relative ">
       <ContactForm fields={fields} color="bg-contrastAccent-200" btnColor="bg-contrast-400" />
     </div>
   </div>;

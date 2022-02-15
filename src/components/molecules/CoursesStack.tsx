@@ -11,20 +11,22 @@ interface Props {
 }
 const CoursesStack = ({ courses }: Props) => {   
     return (
-        <div className="my-20">
+        <div className="mt-5 md:mt-20 mb-20">
             {
                 !isNull(courses) && (
-                    <TransitionGroup component="div">
+                    <TransitionGroup component="div" className="flex flex-wrap">
                         {
                             courses?.map((item:any, idx:number) => {
                                 return (
-                                    <CSSTransition
-                                        timeout={500}
-                                        classNames="fade"
-                                        key={idx}
-                                    >
-                                        <CourseStackElement key={idx} course={item} />
-                                    </CSSTransition>
+                                    <div className="w-full sm:w-1/2 md:w-full">
+                                        <CSSTransition
+                                            timeout={500}
+                                            classNames="fade"
+                                            key={idx}
+                                        >
+                                            <CourseStackElement key={idx} course={item} />
+                                        </CSSTransition>
+                                    </div>
                                 )
                             })
                         }            

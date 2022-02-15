@@ -5,7 +5,7 @@ interface Props{
 }
 const StatsCard = ({ stats, text }: Props) => {
     return (<>        
-        <div className="relative z-30 mt-32 mb-20 py-5 bg-accent-200 w-full h-40 rounded-3xl shadow-2xl flex items-center justify-center gap-6">            
+        <div className="relative z-30 mt-32 mb-20 py-16 md:py-5 bg-accent-200 w-full h-auto md:h-40 rounded-xl shadow-2xl flex flex-wrap md:flex-nowrap items-center justify-center gap-6">            
             {
                 text.length > 0 && text.map((item: { top: string; bottom: string; end: string; start: string; }, itemIdx: number) => {                    
                     return (
@@ -19,7 +19,10 @@ const StatsCard = ({ stats, text }: Props) => {
                                 <p>{item.bottom ?? '\u00A0' }</p>
                             </div>
                             {
-                                itemIdx < text.length - 1 && (<div style={{ width: '0.5px' }} className="h-2/3 bg-slate-400"></div>)
+                                itemIdx < text.length - 1 && (<>
+                                    <div style={{ height: '0.5px' }} className="w-2/3 bg-slate-300 sm:hidden block"></div>
+                                    <div style={{ width: '0.5px' }} className="h-2/3 bg-slate-400 hidden md:block"></div>
+                                </>)
                             }
                         </React.Fragment>
                     )

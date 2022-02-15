@@ -1,6 +1,7 @@
 import CircularProgress from '@mui/material/CircularProgress';
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import GradBlobResp from '../components/atom/GradBlobResp';
 import GradBlobTRSm from '../components/atom/GradBlobTRSm';
 import { Banner, StatsCard, Curriculum, CustTimeline } from '../components/sections/course';
 import CourseCTA from '../components/sections/course/CourseCTA';
@@ -28,9 +29,10 @@ const Course = () => {
   }, [id])
 
   return (<>
-    <div className="overflow-y-hidden h-full">
+    <div className="hidden md:block overflow-y-hidden h-full">
       <GradBlobTRSm />
     </div>
+        <div className="md:hidden block"><GradBlobResp /></div>    
     {
       !isNull(course) && !isNull(instructor) && !fail ? (<>
           <div className="mx-auto w-10/12 mt-12 ">

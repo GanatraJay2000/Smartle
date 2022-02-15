@@ -33,19 +33,19 @@ const Banner = ({ course }: Props) => {
             </div>
         </Modal>        
         <RegisterInterestModal courseId={course.id} openInterest={openInterest} handleCloseInterest={handleCloseInterest} />
-        <div className="flex flex-wrap">
-            <div className="w-1/2 pr-10">
-                <h1 className="font-black text-3xl">{course.title}</h1>
-                <p className="text-lg mt-4">{course.desc}</p>
-                <h1 className="font-black text-xl mt-6">Learning Objectives</h1>
-                <p className="text-lg mt-4">{course.objective}</p>
+        <div className="z-20 relative flex flex-wrap flex-col-reverse md:flex-row">
+            <div className="md:w-1/2 mt-10 md:mt-0 md:pr-10">
+                <h1 className="font-black text-3xl text-center md:text-left">{course.title}</h1>
+                <p className="md:text-lg mt-4">{course.desc}</p>
+                <h1 className="font-black md:text-xl mt-6">Learning Objectives</h1>
+                <p className="md:text-lg mt-4">{course.objective}</p>
                 <div className="flex gap-4">
                     <Button
                         onClick={handleOpenInterest} 
-                        className='mt-12 px-14 py-2 text-white bg-color-400 font-bold rounded-xl'>Register Your Interest</Button>
+                        className='mt-12 px-7 md:px-14 py-2 text-white bg-color-400 font-bold rounded-xl'>Register Your Interest</Button>
                 </div>
             </div>
-            <div className="w-1/2 flex items-center justify-center">
+            <div className="md:w-1/2 flex items-center justify-center">
                 <div className="bg-accent-200 rounded-md shadow-xl p-3 w-10/12 relative">
                     <div onClick={handleOpenVideo} className="cursor-pointer absolute inset-3 rounded-md bg-gray-800 opacity-30 z-30"></div>
                     <button onClick={handleOpenVideo} className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full w-8 h-8 bg-slate-100 z-40 p-0 flex justify-center items-center">                        

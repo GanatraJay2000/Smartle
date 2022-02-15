@@ -14,6 +14,7 @@ import FeatureBox from "../../atom/FeatureBox";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay, Pagination } from 'swiper';
 import 'swiper/css';
+import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 const Features = () => {
@@ -55,7 +56,7 @@ const Features = () => {
       <div        
         className="featuresContainer  z-10 bg-white overflow-y-hidden relative border-3"
       >
-        <h1 className="text-5xl font-black text-center">Features of Smartle</h1>
+        <h1 className="text-3xl md:text-5xl font-black text-center">Features of Smartle</h1>
         <img className="hidden sm:block absolute z-20" src={Feature.default} alt="" />
         <img className="w-full absolute translate-y-16 pointer-events-none block sm:hidden" src={FeatureMobile.default} alt="" />
         <img
@@ -67,11 +68,11 @@ const Features = () => {
           <Swiper
                 modules={[Autoplay, Pagination]}
                 spaceBetween={20}
-                pagination={{clickable: true,}}
+                pagination={{clickable: true}}
                 loop={true}
                 autoplay={{ delay: 3500 }}
                 slidesPerView={1}
-                className="pt-10 pb-12 mb-3"
+                className="pt-7 pb-12 mb-3"
           >
             {
             homeFeatureList.map((f:any, featureidx:any) => {
