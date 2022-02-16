@@ -15,6 +15,7 @@ html {
 
 *:not(i) {
   font-family: "Poppins", sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
 
 ::-moz-selection {

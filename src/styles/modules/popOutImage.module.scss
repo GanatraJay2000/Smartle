@@ -23,7 +23,7 @@
   .circle {
     width: 100%;
     height: 100%;
-    z-index: 11;
+    z-index: 1;
     position: absolute;
     bottom: calc(var(--image-size) * -1rem);
     box-shadow: var(--circle-shadow);
@@ -34,7 +34,7 @@
     width: 100%;
     height: 120%;
     position: relative;
-    z-index: 11;
+    z-index: 91;
 
     &::before {
       content: "";

@@ -8,7 +8,7 @@ const Banner = () => {
   let glass = {'background': 'rgba( 255, 255, 255, 0.3 )','backdropFilter': 'blur( 5px )','WebkitBackdropFilter': 'blur( 5px )','borderRadius': '10px','borderRight': '.5px solid rgba( 255, 255, 255, 0.28 )','borderBottom': '.5px solid rgba( 255, 255, 255, 0.28 )',} as React.CSSProperties;
   
   return (
-    <div className="flex flex-wrap flex-col-reverse md:flex-row mb-20 md:mb-40 md:px-32 md:pt-8 relative">  
+    <div className="z-40 flex flex-wrap flex-col-reverse md:flex-row mb-20 md:mb-40 md:px-32 md:pt-8 relative">  
       <div className="mt-60 md:mt-0 md:mb-0 w-full md:w-1/2 h-full md:pt-20 flex px-4 md:px-0 md:justify-end">
         <div className="w-full">
           <h2 className='text-bold text-3xl md:text-5xl font-black font-poppins text-center md:text-left'>

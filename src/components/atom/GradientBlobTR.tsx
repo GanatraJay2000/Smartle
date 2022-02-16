@@ -7,7 +7,6 @@ const GradientBlobTR = () => {
             style={{
                 height: '200vh',
             }}
-        
         >
             <div className="translate-x-20 translate-y-0">
                 <svg xmlns="http://www.w3.org/2000/svg" width="824" style={{ height:'100%' }} viewBox="0 0 824 1000" fill="none">

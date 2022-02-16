@@ -4,6 +4,10 @@ module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   theme: {    
     extend: {
+      scale: {
+        '30': '0.3',
+        '40': '0.4',
+      },
       fontFamily: {
           poppins: ['Poppins', ...defaultTheme.fontFamily.sans],
           lato: ['Lato'],

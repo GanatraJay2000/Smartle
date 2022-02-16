@@ -10,8 +10,9 @@ interface Props{
     borderColor?: any;
     imageSize?: any;
     circleShadow?: any;
+    extraClasses?: any;
 }
-const PopOutCircle = ({image, imageTop='3rem', imageLeft='0rem', imagePos='left top', circleBg='bg-accent-200', imageOverflow='hidden', borderColor='purple', imageSize='4', circleShadow='16px 16px 16px #00000033'}:Props) => {      
+const PopOutCircle = ({ image, imageTop='3rem', imageLeft='0rem', imagePos='left top', circleBg='bg-accent-200', imageOverflow='hidden', borderColor='purple', imageSize='4', circleShadow='16px 16px 16px #00000033', extraClasses=""}:Props) => {      
     
     let style = {
         "--image-url": `url("${image}")`,
@@ -24,9 +25,9 @@ const PopOutCircle = ({image, imageTop='3rem', imageLeft='0rem', imagePos='left 
     } as React.CSSProperties;
 
     return (
-        <div  style={style} className={`md:ml-10 ${borderColor==='blue' ? styles.contrastBorder : ''} ${styles.box} `}>
+        <div  style={style} className={`${extraClasses} md:ml-10 ${borderColor==='blue' ? styles.contrastBorder : ''} ${styles.box} `}>
             <div className={`${styles.circle} rounded-full ${circleBg}`}></div>
-            <div className={`rounded-b-full ${styles.image}`}></div>
+            <div className={`rounded-b-full z-50 ${styles.image}`}></div>
         </div>
     )
 }

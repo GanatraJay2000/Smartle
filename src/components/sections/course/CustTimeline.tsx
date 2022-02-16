@@ -10,7 +10,7 @@ interface Props{
 const CustTimeline = ({ list }: Props) => {
 
   const [activeDot, setActiveDot] = useState<string>((Object.keys(list) as any)[0] as string);
-  return <div className='pb-1 relative mb-40'>
+  return <div className='pb-1 relative mb-20 md:mb-40'>
     <h1 className="text-4xl font-black text-center mt-32">Learning Journey</h1>
     <div className="overflow-x-scroll md:overflow-x-auto overflow-y-hidden  rounded-t-xl md:rounded-xl mt-16">
       <div style={{minWidth:'750px'}} className="relative timeline py-5 bg-accent-200 w-full h-60 md:pb-16 rounded-t-xl md:rounded-3xl shadow-2xl flex justify-center items-center">         
