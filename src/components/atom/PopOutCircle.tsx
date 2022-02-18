@@ -26,9 +26,9 @@ const PopOutCircle = ({ image, imageTop='3rem', imageLeft='0rem', imagePos='left
 
     return (
         <div  style={style} className={`${extraClasses} md:ml-10 ${borderColor==='blue' ? styles.contrastBorder : ''} ${styles.box} `}>
-            <div className={`${styles.circle} rounded-full ${circleBg}`}></div>
-            <div className={`rounded-b-full z-50 ${styles.image}`}></div>
-        </div>
+            <div className={`${styles.circle} z-20 rounded-full ${circleBg}`}></div>
+            <div className={`rounded-b-full z-30 ${styles.image}`}></div>
+        </div>  
     )
 }
 

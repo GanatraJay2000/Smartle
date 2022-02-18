@@ -3,9 +3,9 @@ import { TopRightGradPng } from '../../util/resources';
 
 const GradientBlobTR = () => {
     return (        
-        <div className="absolute top-0 right-0 overflow-y-hidden overflow-x-hidden"
+        <div className="absolute z-10 top-0 right-0 overflow-y-hidden overflow-x-hidden"
             style={{
-                height: '200vh',
+                height: '110vh',
             }}
         >
             <div className="translate-x-20 translate-y-0">

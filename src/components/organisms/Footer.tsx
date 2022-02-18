@@ -31,7 +31,7 @@ const Footer = ()=> {
                   Legal
               </div>
               <Link to={'/'} className="font-medium">Privacy Policy</Link>              
-              <Link to={'/'} className="font-medium">Terms of Service</Link>              
+              <Link to={'/terms-of-service'} className="font-medium">Terms of Service</Link>              
             </Stack>
           </div>
           <div className="w-full mt-7 md:mt-0 md:w-2/12">

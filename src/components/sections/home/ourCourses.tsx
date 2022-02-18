@@ -29,7 +29,7 @@ const OurCourses = () => {
   return (
     <div className=''>
       {
-        courses && (<div className='relative z-10 pt-10'>
+        courses && (<div className='relative z-30 pt-10'>
           <h2 className='font-black text-3xl md:text-5xl text-center'>Our Courses</h2>
           <p className='text-md md:text-xl text-center md:w-11/12 mx-auto mt-4 md:mt-8'>Unique global curriculum to helps young children acquire highly practical Life Skills. Content aligned to P21 framework (United States of America), Skillizen Olympiad Foundation (Singapore), National Education Policy 2021 (India)</p>
           <CoursesGrid courses={courses} />

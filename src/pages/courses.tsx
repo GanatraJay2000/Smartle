@@ -120,11 +120,11 @@ const Courses = () => {
           className={`${filterAge === '13-14' ? 'dark:text-white border-2 border-accent-400 bg-accent-400':'bg-white border-2 border-accent-400'} w-full sm:w-5/12 md:w-auto mx-auto text-center text-slate-900  my-2 cursor-pointer px-6 py-1 rounded shadow-lg font-bold`}>13-14 Yrs</div>
         </div>
       </div>
-      {
+      {/* {
         courses && updateCourses && (
           <CoursesStack courses={courses} />
         )
-      }
+      } */}
     </div>
   </>);
 }

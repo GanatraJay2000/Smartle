@@ -6,6 +6,8 @@ const Courses = lazy(() => import('../../pages/courses'));
 const Course = lazy(() => import('../../pages/course'));
 // const About = lazy(() => import('../../pages/about'));
 const Enterprise = lazy(() => import('../../pages/enterprise'));
+const Legal = lazy(() => import('../../pages/legal'));
+const PrivacyPolicy = lazy(() => import('../../pages/privacyPolicy'));
 const Error = lazy(() => import('../../pages/error'));
 
 
@@ -55,6 +57,20 @@ const routes: Array<RouteType> = [
 		path: '/enterprise',
 		title: 'Smartle for Enterprise',
 		show:true
+	},
+	{
+		element: <Legal />,
+		key: 'legal',
+		path: '/terms-of-service',
+		title: 'Terms of Service',
+		show:false
+	},
+	{
+		element: <PrivacyPolicy />,
+		key: 'privacy-policy',
+		path: '/privacy-policy',
+		title: 'Privacy Policy',
+		show:false
 	},
 	{
 		element: <Error />,
