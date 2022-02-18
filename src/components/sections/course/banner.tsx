@@ -21,7 +21,7 @@ const Banner = ({ course }: Props) => {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"            
         >
-            <div className="w-9/12 h-full py-10 mx-auto">
+            <div className="w-11/12 md:w-9/12 md:h-full py-20 md:py-10 mx-auto">
                 <div className="rounded-xl md:p-5 bg-white h-full w-full relative">
                     <div onClick={handleCloseVideo} className="cursor-pointer absolute -top-5 -right-5 h-10 w-10 bg-color-400 text-white text-3xl rounded-full flex justify-center items-center">
                         &times;

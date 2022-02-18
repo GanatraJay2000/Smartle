@@ -66,7 +66,7 @@ const Approach = () => {
         style={{ height: "40rem" }}
         className="overflow-y-hidden pt-5  relative border-3"
       >
-      <p className="md:text-xl text-center">We use a collaborative agile approach to deliver outcomes ensuring quick efficient releases</p>
+      <p className="md:text-xl text-center mb-3">We use a collaborative agile approach to deliver outcomes ensuring quick efficient releases</p>
         <img className="hidden sm:block absolute z-20" src={Approaches.default} alt="" />
         <img className="sm:hidden block absolute z-20 translate-y-16 pointer-events-none w-full" src={FeatureMobileBlue.default} alt="" />
         <img
@@ -96,7 +96,7 @@ const Approach = () => {
               loop={true}
               autoplay={{ delay: 3500 }}
               slidesPerView={1}
-              className="pt-7 pb-8 mb-3"
+              className="pt-3 pb-16 md:pb-8 mb-3"
             >
             {
               approachList.map((f:any, featureidx:any) => {
@@ -109,7 +109,7 @@ const Approach = () => {
                         img={f.img}
                         title={f.title}
                         desc={f.desc}
-                        size="h-72 w-52"
+                        size="h-80 w-60 md:h-72 md:w-52"
                       />
                     </div>
                   </SwiperSlide>

@@ -31,8 +31,8 @@ const RegisterInterestModal = ({ courseId, openInterest, handleCloseInterest }: 
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"            
         >
-            <div className="w-1/2 pt-20 mx-auto">
-                <div className="rounded-lg md:p-10 bg-white h-full w-full relative">
+            <div className="w-10/12 md:w-1/2 pt-20 mx-auto">
+                <div className="rounded-lg p-8 md:p-10 bg-white h-full w-full relative">
                     <div onClick={handleCloseInterest} className="shadow-lg cursor-pointer absolute -top-5 -right-5 h-10 w-10 bg-color-400 text-white text-3xl rounded-full flex justify-center items-center">
                         &times;
                     </div>
