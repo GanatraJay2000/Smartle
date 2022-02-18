@@ -29,7 +29,7 @@ const Features = () => {
     {
       pos: 'md:left-1/4 md:top-48 md:-translate-x-10 md:translate-y-0',
       img: Boy,
-      title: `International<br />Cocahes`,
+      title: `International<br />Coaches`,
       desc: `Instructors and Coaches from around the world to share a global perspective`
     },
     {
