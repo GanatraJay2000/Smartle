@@ -12,7 +12,6 @@ const SampleWorks = () => {
     ( () => {
 			try {
                 var data = getCourses('home', true, '=');
-                console.log(data);
 				setCourses(data);
 			} catch (e: any) {
 				setFail(e.message);

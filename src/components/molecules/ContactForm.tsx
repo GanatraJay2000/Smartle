@@ -52,7 +52,6 @@ const ContactForm = ({ fields, color='bg-accent-200', btnColor='bg-color-400', c
                     validationSchema={validation as any}
                     onSubmit={async (values, { setSubmitting }) => { 
                         try {      
-                            console.log(values);
                             setSubmitting(false);
                             setSubmitted(true);                            
                         } catch (e: any) {

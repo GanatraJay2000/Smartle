@@ -20,7 +20,7 @@ const Banner = () => {
           </p>
           <div className="w-full text-center md:text-left">
           <Link to='/courses' className=''>
-            <Button className='mt-12  rounded-md md:rounded-md shadow-xl font-bold py-3 px-10 md:w-auto md:px-24 h-9 text-white bg-color-400 '>
+            <Button className='mt-12  rounded-md md:rounded-md shadow-xl font-bold py-3 px-10 md:w-auto md:px-16 lg:px-24 h-9 text-white bg-color-400 '>
               Explore Courses
             </Button>
             </Link>

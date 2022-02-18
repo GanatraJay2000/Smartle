@@ -14,6 +14,9 @@ export function getCourses(param?: any, value?: any, compare: any = "=") {
     if (compare === ">=") cl = cl.filter((cli: any) => cli[param] >= value);
     if (compare === "<=") cl = cl.filter((cli: any) => cli[param] <= value);
   }
+  cl.forEach((lclCourse:any) => {
+    lclCourse.instructor = getInstructor(lclCourse.instructor_id)
+  })
   const courses: any = cl;
   return courses;
 }
@@ -23,7 +26,6 @@ export function getCourse(id: any, type: any = "slug") {
   if (!lclCourse) return;
   lclCourse.instructor = getInstructor(lclCourse.instructor_id)
   const course: any = lclCourse;
-  console.log(course);
   return course;
 }
 

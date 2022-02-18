@@ -58,8 +58,6 @@ const Services = () => {
                   modules={[Pagination, Autoplay]}
                   spaceBetween={20}
                   slidesPerView={1}
-                  onSlideChange={() => console.log('slide change')}
-                  onSwiper={(swiper) => console.log(swiper)}
                   pagination={{clickable: true,}}
                   loop={true}
                   autoplay={{ delay: 3500 }}
