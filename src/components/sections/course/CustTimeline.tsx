@@ -29,7 +29,7 @@ const CustTimeline = ({ list }: Props) => {
                 <div onClick={() => setActiveDot(title)}
                   className={`timelinePoint h-5 w-5 bg-color-400 rounded-full ${myDir[1]} cursor-pointer relative`}
                 >
-                  <div className={`absolute ${showLine} truncate z-50 px-2 left-3 -translate-x-1/2 ${myDir[2]} font-semibold`}>
+                  <div className={`absolute ${showLine} truncate z-50 px-2 left-3 -translate-x-1/2 ${myDir[2]} font-semibold text-slate-700`}>
                       {title}
                   </div>
                   <div style={{transform: 'translateX(-6px) rotate(90deg)'}} className={`w-32 ${showLine} timeline-line top-24 -left-12 absolute`}></div>
@@ -46,8 +46,8 @@ const CustTimeline = ({ list }: Props) => {
     </div>      
     <div className="relative md:absolute top-full -translate-y-12 left-1/2 -translate-x-1/2 bg-color-200 rounded-b-xl md:rounded-3xl shadow-2xl md:w-10/12 py-5">
         <Transition index={list[activeDot]}>
-            <div className="h1 text-center font-bold text-2xl">{activeDot}</div>
-            <div className="text-center px-5 md:px-16 mt-3 pb-3 font-medium">{list[activeDot]}</div>
+            <div className="h1 text-center font-bold text-2xl text-slate-700">{activeDot}</div>
+            <div className="text-center px-5 md:px-16 mt-3 pb-3 font-medium text-slate-700">{list[activeDot]}</div>
         </Transition>
       </div>
   </div>;

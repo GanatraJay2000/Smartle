@@ -37,7 +37,7 @@ const Contact = () => {
       extraClass:''
     },  
     {
-      label: "Breif Message",
+      label: "Brief Message",
       required: true,
       type: 'text',        
       multiline: true,

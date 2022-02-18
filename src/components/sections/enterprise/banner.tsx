@@ -11,7 +11,7 @@ const Banner = () => {
       <div className="md:w-1/2 h-full pt-20 flex justify-end">
         <div className="">
           <h2 className='text-center md:text-left text-bold text-2xl md:text-5xl font-black font-poppins'>Delivering impactful<br />learning solutions</h2>
-          <p className='text-center md:text-xl px-10 md:px-0 md:w-10/12 md:text-justify mt-8'>Offering world class e-learning content and solutions compatible with industry leading learning management systems</p>
+          <p className='text-center md:text-xl px-10 md:px-0 md:w-10/12 md:text-left mt-8'>Offering world class e-learning content and solutions compatible with industry leading learning management systems</p>
           <div className="w-full text-center md:text-left">
             <Link to='/enterprise#services' className=''>
               <Button className='mt-12 w-9/12 mx-auto md:mx-0 rounded-md md:rounded-xl shadow-xl font-bold py-3 md:px-24  h-9 text-white bg-contrast-400'>

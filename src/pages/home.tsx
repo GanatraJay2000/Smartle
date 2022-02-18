@@ -11,14 +11,14 @@ const Home = () => {
   return (<>
     <div className="overflow-x-hidden">
       <div className="block md:hidden"><GradBlobResp /></div>
-      <Banner />    
+      <Banner/>    
       <OurCourses />  
       <Method />  
       <Features />
-      <div className="pt-10">
+      <div className="pt-10" id="why">
         <Why />
       </div>
-      <h1 className="text-3xl md:text-5xl text-center mb-10 font-black">Get in touch with us</h1>
+      <h1 className="text-3xl md:text-5xl text-center mb-10 font-black" id="#contact-us">Get in touch with us</h1>
       <div className="pb-20">
         <div className="flex flex-wrap flex-col-reverse md:flex-row w-10/12 mx-auto" >
           <div className="md:w-4/12 md:mr-10 flex items-center justify-center"> 

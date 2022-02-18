@@ -11,12 +11,12 @@ const StatsCard = ({ stats, text }: Props) => {
                     return (
                         <React.Fragment key={itemIdx}>
                             <div className="w-40 text-center mt-2">
-                                <p>{item.top ?? '\u00A0' }</p>
+                                <p className="text-gray-700">{item.top ?? '\u00A0' }</p>
                                 <div className={`font-black ${stats[itemIdx] == 'Self Paced' ? 'text-2xl' : 'text-5xl'} text-center text-color-400`}>
-                                    <span className='text-3xl'>{item.start ?? ""}</span>
+                                    <span className='text-gray-700 text-3xl'>{item.start ?? ""}</span>
                                     {stats[itemIdx]}
-                                    <span className='text-3xl'>{item.end ?? ""}</span></div>
-                                <p>{item.bottom ?? '\u00A0' }</p>
+                                    <span className='text-gray-700 text-3xl'>{item.end ?? ""}</span></div>
+                                <p className="text-gray-700">{item.bottom ?? '\u00A0' }</p>
                             </div>
                             {
                                 itemIdx < text.length - 1 && (<>

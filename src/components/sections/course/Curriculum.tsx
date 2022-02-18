@@ -6,7 +6,7 @@ interface Props{
 const Curriculum = ({curr}:Props) => {
   return (<>
     <div className='mb-20'>
-      <h1 className="text-4xl font-black text-center mb-20">Course Carriculum</h1>
+      <h1 className="text-4xl font-black text-center mb-20">Course Curriculum</h1>
       {
         !isNull(curr) && curr.map((cur:any, idx:number) => {
           return (

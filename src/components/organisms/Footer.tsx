@@ -20,9 +20,9 @@ const Footer = ()=> {
               <div className="text-lg font-black md:font-bold">
                   Company
               </div>
-              <Link to={'/'} className="font-medium">About Us</Link>              
-              <Link to={'/'} className="font-medium">Education</Link>              
-              <Link to={'/'} className="font-medium">Teach at Smartle</Link>              
+              <Link to={'/#why'} className="font-medium">About Us</Link>              
+              <Link to={'/enterprise'} className="font-medium">Education</Link>              
+              <Link to={'/#contact-us'} className="font-medium">Teach at Smartle</Link>              
             </Stack>
           </div>
           <div className="w-full mt-7 md:mt-0 md:w-2/12">
@@ -39,8 +39,8 @@ const Footer = ()=> {
               <div className="text-lg font-black md:font-bold">
                   Support
               </div>
-              <Link to={'/'} className="font-medium">FAQs</Link>              
-              <Link to={'/'} className="font-medium">Contact us</Link>
+              {/* <Link to={'/'} className="font-medium">FAQs</Link>               */}
+              <Link to={'/#contact-us'} className="font-medium">Contact us</Link>
             </Stack>
           </div>
         </div>
