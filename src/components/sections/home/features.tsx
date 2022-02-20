@@ -64,15 +64,23 @@ const Features = () => {
           src={FeatureOutline.default}
           alt=""
         />
-        <div className="block relative z-30 md:hidden">
+        <div className="block relative z-30 lg:hidden">
           <Swiper
                 modules={[Autoplay, Pagination]}
                 spaceBetween={20}
                 pagination={{clickable: true}}
                 loop={true}
                 autoplay={{ delay: 3500 }}
-                slidesPerView={1}
+                // slidesPerView={1}
                 className="pt-7 pb-12 mb-3"
+                breakpoints={{
+                  768: {
+                    slidesPerView: 2,
+                  },
+                  900: {
+                    slidesPerView: 3,
+                  },
+                }}
           >
             {
             homeFeatureList.map((f:any, featureidx:any) => {
@@ -92,7 +100,7 @@ const Features = () => {
           }
         </Swiper>
         </div>
-        <div className="md:block hidden">
+        <div className="lg:block hidden">
           {
             homeFeatureList.map((f:any, featureidx:any) => {
               return (

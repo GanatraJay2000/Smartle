@@ -114,6 +114,7 @@ dist
 
 # production
 /build
+/automation
 
 # misc
 .DS_Store

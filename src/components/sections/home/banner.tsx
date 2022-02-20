@@ -34,7 +34,7 @@ const Banner = () => {
         <div className="block md:hidden">
           <PopOutCircle image={BImg} imageSize="2.5" />          
         </div>
-        <img src={Dog} alt="Dogo" className='right-0 absolute z-50 h-24 -bottom-28 md:bottom-16 scale-90 md:scale-100' />
+        {/* <img src={Dog} alt="Dogo" className='right-0 absolute z-50 h-24 -bottom-28 md:bottom-16 scale-90 md:scale-100' /> */}
         <div className="w-full flex justify-end absolute md:relative -bottom-40 md:bottom-0">
         <div style={glass} className="text-slate-900 font-bold py-4 px-5 md:px-2 lg:px-5 text-md h-20 w-80 relative z-40 scale-90 md:scale-100">
           Our mentors make learning easy,<br />Explore our courses now!!
