@@ -11,15 +11,15 @@ const Method = () => {
     },
     "com": {      
       "title": "Communication",
-      "text":"<b>Communication</b> is the practice of solving problems, among other qualities. It empowers students to discover the truth in assertions, especially when it comes to separating fact from opinion.",
+      "text":"<b>Communication</b> is the practice of conveying ideas quickly and clearly. It is the glue that brings all of these educational qualities together.",
     },
     "col": {      
       "title": "Collaboration",
-      "text":"<b>Collaboration</b> is the practice of solving problems, among other qualities. It empowers students to discover the truth in assertions, especially when it comes to separating fact from opinion.",
+      "text":"<b>Collaboration</b> means getting students to work together, achieve compromises, and get the best possible results from solving a problem.",
     },
     "cr": {      
       "title": "Creativity",
-      "text":"<b>Creativity</b> is the practice of solving problems, among other qualities. It empowers students to discover the truth in assertions, especially when it comes to separating fact from opinion.",
+      "text":"<b>Creativity</b> is equally important as a means of adaptation. This skill empowers students to see concepts in a different light, which leads to innovation.",
     },
   };
 

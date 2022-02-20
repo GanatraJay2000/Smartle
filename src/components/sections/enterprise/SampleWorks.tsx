@@ -11,7 +11,7 @@ const SampleWorks = () => {
     useEffect(() => {
     ( () => {
 			try {
-                var data = getCourses('home', true, '=');
+                var data = getCourses('enterprise', true, '=', true);
 				setCourses(data);
 			} catch (e: any) {
 				setFail(e.message);
@@ -20,11 +20,10 @@ const SampleWorks = () => {
       }, [])
     
     return (
-        <div className='my-16 mx-auto md:w-9/12'>
+        <div className='my-16'>
             <h1 className="mb-10 text-center text-3xl font-extrabold">Sample Works</h1>
-            {/* <CoursesStack courses={courses} /> */}
             {
-                !isNull(courses) && (<CoursesGrid elementWidth='sm:w-1/2 md:w-1/3' color="contrastAccent-200" courses={courses} />)
+                !isNull(courses) && (<CoursesGrid elementWidth='sm:w-1/2 md:w-3/12' color="contrastAccent-200" courses={courses} />)
             }
         </div>
     );

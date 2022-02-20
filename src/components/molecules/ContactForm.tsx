@@ -20,8 +20,9 @@ interface Props{
     btnColor?: any;
     classes?: any;
     fieldClasses?: any;
+    submitMethod?: any;
 }
-const ContactForm = ({ fields, color='bg-accent-200', btnColor='bg-color-400', classes='rounded-lg hover:shadow-lg shadow-md p-0 md:p-5', fieldClasses='px-4' }: Props) => {
+const ContactForm = ({ fields, color='bg-accent-200', btnColor='bg-color-400', classes='rounded-lg hover:shadow-lg shadow-md p-0 md:p-5', fieldClasses='px-4', submitMethod }: Props) => {
     const [isSubmitted, setSubmitted] = useState(false);
     const [fail, setFail] = useState<string | undefined>(undefined);
     const [initValues, setInitValues] = useState<Record<string, any> | undefined>(undefined);
@@ -53,7 +54,8 @@ const ContactForm = ({ fields, color='bg-accent-200', btnColor='bg-color-400', c
                     onSubmit={async (values, { setSubmitting }) => { 
                         try {      
                             setSubmitting(false);
-                            setSubmitted(true);                            
+                            setSubmitted(true);  
+                            submitMethod(values);
                         } catch (e: any) {
                             setFail(e.message);                            
                         }

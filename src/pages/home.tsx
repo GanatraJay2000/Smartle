@@ -7,7 +7,7 @@ import PopOutCircle from '../components/atom/PopOutCircle';
 import { Banner, Contact, Features, FeaturesMobile, Method, OurCourses, Why } from '../components/sections/home';
 import { BoyDab as BImg, TopRightGradPng } from '../util/resources';
 
-const Home = () => {
+const Home = () => {  
   return (<>
     <div className="overflow-x-hidden">
       <div className="block md:hidden"><GradBlobResp /></div>

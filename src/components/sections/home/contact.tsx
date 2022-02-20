@@ -40,7 +40,11 @@ const Contact = () => {
   ];
   return <div className=' relative z-10 mx-auto'>    
     <div className="py-3">
-      <ContactForm fields={fields} />
+      <ContactForm fields={fields} submitMethod={(values:any) => {
+        
+        console.log("values from contact")
+        console.log(values)
+      }} />
     </div>
   </div>;
 }

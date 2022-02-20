@@ -14,12 +14,14 @@ const Course = () => {
   const [course, setCourse] = useState<any>(undefined);
   const [fail, setFail] = useState<string | undefined>(undefined);
   const [instructor, setInstructor] = useState<any>(undefined);
+  const [isEnterprise, setIsEnterprise] = useState<boolean>(false);
 
   useEffect(() => {
     ( () => {
 			try {
         var data = getCourse(id);
         // if (!isNull(data)) return;
+        if ('notNormalCourses' in data) setIsEnterprise(true);
         setInstructor(data.instructor);
 				setCourse(data);				
 			} catch (e: any) {
@@ -34,17 +36,24 @@ const Course = () => {
     </div>
         <div className="md:hidden block"><GradBlobResp /></div>    
     {
-      !isNull(course) && !isNull(instructor) && !fail ? (<>
+      !isNull(course) && (isEnterprise || !isNull(instructor)) && !fail ? (<>
           <div className="mx-auto w-10/12 mt-12 ">
-            <Banner course={course} />
-          <StatsCard
-            stats={course.stats}
-            text={course.statsText} />
-          {course.self_paced ? (<Curriculum curr={Object.values(course.timeline)} />) : (<CustTimeline list={course.timeline} />)}
+          <Banner course={course} isEnterprise={isEnterprise} />
+          {
+            !isEnterprise ? (<>
+              <StatsCard
+                stats={course.stats}
+                text={course.statsText}
+              />
+              {course.self_paced ? (<Curriculum curr={Object.values(course.timeline)} />) : (<CustTimeline list={course.timeline} />)}
+            </>) : (<div className="mt-32 z-20 relative">
+                <Curriculum curr={Object.values(course.timeline)} />
+            </div>)
+          }
         </div>
-        {
+        {/* {
           !course.self_paced && (<Instructor instructor={instructor} />)
-        }
+        } */}
           <CourseCTA courseId={course.id} />
         </>) : (
         <div style={{ marginTop: '40vh', textAlign: 'center' }}>

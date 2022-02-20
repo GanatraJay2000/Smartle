@@ -85,7 +85,7 @@ const Features = () => {
             {
             homeFeatureList.map((f:any, featureidx:any) => {
               return (
-                <SwiperSlide key={f.featureidx}>
+                <SwiperSlide key={featureidx}>
                   <div className="h-80 w-full flex justify-center">
                     <FeatureBox
                       pos={f.pos}
@@ -104,7 +104,8 @@ const Features = () => {
           {
             homeFeatureList.map((f:any, featureidx:any) => {
               return (
-                    <FeatureBox
+                <FeatureBox
+                      key={featureidx}
                       pos={f.pos}
                       img={f.img}
                       title={f.title}

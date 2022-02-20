@@ -10,6 +10,7 @@ interface Props {
     courses: any;
 }
 const CoursesStack = ({ courses }: Props) => {   
+    console.log(courses);
     return (
         <div className="mt-5 md:mt-20 mb-20">
             {
@@ -18,7 +19,7 @@ const CoursesStack = ({ courses }: Props) => {
                         {
                             courses?.map((item:any, idx:number) => {
                                 return (
-                                    <div className="w-full sm:w-1/2 md:w-full">
+                                    <div key={idx} className="w-full sm:w-1/2 md:w-full">
                                         <CSSTransition
                                             timeout={500}
                                             classNames="fade"

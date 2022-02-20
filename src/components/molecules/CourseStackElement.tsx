@@ -7,7 +7,7 @@ interface Props{
     course: any;    
 }
 
-const CourseStackElement = ({ course }: Props) => {    
+const CourseStackElement = ({ course }: Props) => {
     return (<>
         {
             !isNull(course) && (
@@ -27,7 +27,7 @@ const CourseStackElement = ({ course }: Props) => {
                         <div className="mb-2">{course.desc}</div>
                         <div className="mb-1 flex items-center">
                             <img className="w-10 h-10 mr-5" src={Clock.default} alt="" />
-                            <div className="">Duration: <div>{course.duration}</div></div>            
+                            <div className="">Duration: <span>{course.duration}</span></div>
                         </div>
                         <div className="mb-5 md:mb-10 flex items-center">
                             <img className="w-10 h-10 mr-5" src={Card.default} alt="" />            

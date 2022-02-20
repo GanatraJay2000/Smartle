@@ -15,18 +15,20 @@ const Socials = () => {
     
     return (
         <div className="flex">    
-            <Link to='/'>
+            {/* <Link to='/'>
                 <i className={`text-white ${color} text-xl mx-4 bi bi-facebook`}></i>
             </Link>    
             <Link to='/'>                
                 <i className={`text-white ${color} text-xl mx-4 bi bi-instagram`}></i>
             </Link>    
-            {/* <Link to='/'>                
-                <i className={`text-white ${color} text-xl mx-4 bi bi-twitter`}></i>
-            </Link>     */}
             <Link to='/'>                
                 <i className={`text-white ${color} text-xl mx-4 bi bi-linkedin`}></i>
-            </Link>
+            </Link> */}
+            <div
+                onClick={()=>window.scrollTo(0,0)}
+                className="rounded-full w-8 h-8 flex justify-center items-center text-sm md:cursor-pointer bg-color-400 text-white">
+                <i className={`text-white text-xl mx-4 bi bi-caret-up-fill`}></i>
+            </div>
         </div>
     );
 }

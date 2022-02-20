@@ -5,8 +5,8 @@ import { courseList, instructorList } from './data';
 
 export const videoBase = "https://www.youtube.com/embed/";
 
-export function getCourses(param?: any, value?: any, compare: any = "=") {
-  let cl = courseList;  
+export function getCourses(param?: any, value?: any, compare: any = "=", ent:boolean=false) {
+  let cl = courseList;
   if (param && value) {
     if (compare === "=") cl = cl.filter((cli: any) => cli[param] == value);
     if (compare === ">") cl = cl.filter((cli: any) => cli[param] > value);
@@ -14,17 +14,24 @@ export function getCourses(param?: any, value?: any, compare: any = "=") {
     if (compare === ">=") cl = cl.filter((cli: any) => cli[param] >= value);
     if (compare === "<=") cl = cl.filter((cli: any) => cli[param] <= value);
   }
-  cl.forEach((lclCourse:any) => {
-    lclCourse.instructor = getInstructor(lclCourse.instructor_id)
+  let finalCourses:any = [];
+  cl.forEach((lclCourse: any, lclIdx:any) => {
+    if ('notNormalCourses' in lclCourse && ent==false) {
+      cl.splice(lclIdx, 0); return;
+    } else {
+      lclCourse.instructor = getInstructor(1)
+    }
+    finalCourses.push(lclCourse);
   })
-  const courses: any = cl;
+  console.log(finalCourses);
+  const courses: any = finalCourses;
   return courses;
 }
 
-export function getCourse(id: any, type: any = "slug") {
+export function getCourse(id: any, type: any = "slug", ent:boolean=false) {
   let lclCourse = courseList.find((element: any) => element[type] === id);
   if (!lclCourse) return;
-  lclCourse.instructor = getInstructor(lclCourse.instructor_id)
+  if (ent == false) lclCourse.instructor = getInstructor(1)  
   const course: any = lclCourse;
   return course;
 }
