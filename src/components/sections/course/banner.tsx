@@ -15,7 +15,7 @@ const Banner = ({ course }: Props) => {
     const handleCloseInterest = () => setOpenInterest(false);
 
     return (<>
-        <Modal
+        {/* <Modal
             open={openVideo}
             onClose={handleCloseVideo}
             aria-labelledby="modal-modal-title"
@@ -31,7 +31,7 @@ const Banner = ({ course }: Props) => {
                     </div>
                 </div>
             </div>
-        </Modal>        
+        </Modal>         */}
         <RegisterInterestModal courseId={course.id} openInterest={openInterest} handleCloseInterest={handleCloseInterest} />
         <div className="z-20 relative flex flex-wrap flex-col-reverse md:flex-row">
             <div className="md:w-1/2 mt-10 md:mt-0 md:pr-10">
@@ -47,10 +47,10 @@ const Banner = ({ course }: Props) => {
             </div>
             <div className="md:w-1/2 flex items-center justify-center">
                 <div className="bg-accent-200 rounded-md shadow-xl p-3 w-10/12 relative">
-                    <div onClick={handleOpenVideo} className="cursor-pointer absolute inset-3 rounded-md bg-gray-800 opacity-30 z-30"></div>
-                    <button onClick={handleOpenVideo} className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full w-8 h-8 bg-slate-100 z-40 p-0 flex justify-center items-center">                        
+                    {/* <div onClick={handleOpenVideo} className="cursor-pointer absolute inset-3 rounded-md bg-gray-800 opacity-30 z-30"></div> */}
+                    {/* <button onClick={handleOpenVideo} className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full w-8 h-8 bg-slate-100 z-40 p-0 flex justify-center items-center">                        
                         <i className="bi bi-caret-right-fill text-slate-800 text-xl"></i>
-                    </button>
+                    </button> */}
                     <img src={course?.image} className="rounded-md w-full" alt="" />
                 </div>
             </div>          

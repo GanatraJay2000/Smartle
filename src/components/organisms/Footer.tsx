@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import Socials from '../molecules/Socials';
 import { LogoAlt } from "../../util/resources";
 
@@ -22,7 +22,7 @@ const Footer = ()=> {
               </div>
               <Link to={'/#why'} className="font-medium">About Us</Link>              
               <Link to={'/enterprise'} className="font-medium">Education</Link>              
-              <Link to={'/#contact-us'} className="font-medium">Teach at Smartle</Link>              
+              <Link to={'/#contactForm'} className="font-medium">Teach at Smartle</Link>              
             </Stack>
           </div>
           <div className="w-full mt-7 md:mt-0 md:w-2/12">
@@ -40,7 +40,7 @@ const Footer = ()=> {
                   Support
               </div>
               {/* <Link to={'/'} className="font-medium">FAQs</Link>               */}
-              <Link to={'/#contact-us'} className="font-medium">Contact us</Link>
+              <Link to={'/#contactForm'} className="font-medium">Contact us</Link>
             </Stack>
           </div>
         </div>
