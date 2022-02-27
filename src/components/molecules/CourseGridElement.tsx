@@ -15,13 +15,14 @@ const CourseGridElement = ({ course, width='sm:w-1/2 md:w-1/3 lg:w-3/12', color=
                 <div style={{height:'22rem'}}  className={`bg-${color} rounded-lg w-full shadow-xl relative md:p-4`}>
                     {
                         course.credits ? (<>
-                            <img src={CreditsTag.default} alt="Credits" className='absolute z-10 -top-2 -right-2' />
+                            <img src={CreditsTag.default} alt="Credits" className='absolute z-20 -top-2 -right-2' />
                         </>) : (<></>)
                     }         
                     <div className="relative overflow-y-hidden h-full">
                         {
                             course.image ? (<>
-                                <img className="w-full h-32 rounded-t-lg md:rounded-md" src={course.image} alt={course.title} />
+                                <img className="w-full h-32 z-10 relative rounded-t-lg md:rounded-md" loading="lazy" src={course.image} alt={course.title} />
+                                <div className='absolute top-0 w-full h-32 rounded-t-lg md:rounded-md bg-color-100'></div>
                             </>) : (
                                 <div className='w-full h-32 rounded-t-lg md:rounded-md bg-color-100'></div>
                             )

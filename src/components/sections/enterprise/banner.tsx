@@ -1,7 +1,7 @@
 import { Button } from '@mui/material';
 import React from 'react';
 import PopOutCircle from '../../atom/PopOutCircle';
-import { EnterpriseBannerGuy as BImg } from '../../../util/resources';
+import { EnterpriseBannerGirl as BImg } from '../../../util/resources';
 import { HashLink as Link } from 'react-router-hash-link';
 
 const Banner = () => {
@@ -23,10 +23,11 @@ const Banner = () => {
       </div>  
       <div className="select-none md:w-1/2 h-full relative flex md:block justify-center">
         <div className="hidden md:block">
-          <PopOutCircle image={BImg} circleBg='bg-contrastAccent-200' imagePos='top' imageTop='0px' imageLeft='10px' imageOverflow='hiden' borderColor='blue' imageSize="4" />
+          <PopOutCircle image={BImg}
+            circleBg='bg-contrastAccent-200' imageTop='14px' imageLeft='10px' borderColor='blue' imageSize="4" />
         </div>
         <div className="block md:hidden ">
-          <PopOutCircle image={BImg} circleBg='bg-contrastAccent-200' imagePos='top' imageTop='0px' imageLeft='10px' imageOverflow='hiden' borderColor='blue' imageSize="2.5" />
+          <PopOutCircle image={BImg} circleBg='bg-contrastAccent-200' imagePos='top' imageTop='-18px' imageLeft='0px' imageOverflow='hiden' borderColor='blue' imageSize="2.5" />
         </div>
       </div>
     </div>
