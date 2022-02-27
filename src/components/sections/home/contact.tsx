@@ -1,6 +1,5 @@
 import React from 'react';
 import ContactForm from '../../molecules/ContactForm';
-import emailjs from '@emailjs/browser';
 import { sendMail } from '../../../util/api';
 
 const Contact = () => {
