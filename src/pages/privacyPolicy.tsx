@@ -2,8 +2,8 @@ import React from 'react';
 import { isNull } from '../util/helpers';
 import data from '../util/resources/files/privacy.json';
 
-const Title = ({ children }:{children:any}) => <h1 className='text-2xl md:text-3xl'>{children}</h1>
-const LI = ({ children, sub }: { children: any, sub?: boolean }) => <li className={`text-sm ${sub?'mb-2':'mb-5'} text-justify text-slate-700`}>{children}</li>
+const Title = ({ children }:{children:any}) => <h1 className='text-2xl font-bold text-gray-700 dark:text-gray-300 md:text-3xl'>{children}</h1>
+const LI = ({ children, sub }: { children: any, sub?: boolean }) => <li className={`text-sm ${sub?'mb-2':'mb-5'} text-justify text-gray-700 dark:text-gray-400`}>{children}</li>
 const List = ({ children, sub }: { children: any, sub?: boolean }) => <ol className={`${sub ? 'mt-3': 'mt-6'} ml-3 md:ml-10 list-decimal`}>{children}</ol>
 const ListBlock = ({ children }: { children: any }) => <div className='p-8 rounded-xl'>{children}</div>
 
@@ -11,7 +11,7 @@ const ListBlock = ({ children }: { children: any }) => <div className='p-8 round
 const PrivacyPolicy = () => {
     return (
         <div className='my-10 md:w-11/12 mx-auto md:pr-6'>
-            <h1 className="text-center text-4xl font-bold mb-10">Privacy Policy</h1>
+            <h1 className="text-center text-4xl font-extrabold mb-10">Privacy Policy</h1>
             {
                 data.map((d, idx) => {
                     return (
@@ -21,7 +21,10 @@ const PrivacyPolicy = () => {
                                 d.content?.map((content:any, cIdx) => {
                                     return (
                                         <div className='mt-6 '>
-                                            <div className="">{content.desc}</div>
+                                            <div className=" text-gray-700 dark:text-gray-400 text-justify"
+                                                 dangerouslySetInnerHTML={{ __html: content.desc }}
+                                            >
+                                            </div>
                                             {!isNull(content?.list) && (
                                                 <List>
                                                     {content?.list?.map((li:any, key:number) => {

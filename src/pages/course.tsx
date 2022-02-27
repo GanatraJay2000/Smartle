@@ -17,27 +17,32 @@ const Course = () => {
   const [isEnterprise, setIsEnterprise] = useState<boolean>(false);
 
   useEffect(() => {
-    ( () => {
-			try {
-        var data = getCourse(id);
-        // if (!isNull(data)) return;
-        if ('notNormalCourses' in data) setIsEnterprise(true);
-        setInstructor(data.instructor);
-				setCourse(data);				
-			} catch (e: any) {
-				setFail(e.message);
-			}
-		})();
+    (() => {
+      try {
+        var data: any = [];
+        if (id === 'chemistry' || id === 'mathematics' || id === 'physics' || id === 'biology') {
+          data = getCourse(id, "slug", true);
+          setIsEnterprise(true);
+        } else {
+          data = getCourse(id);
+          setInstructor(data.instructor);
+        }
+        if (!isNull(data)) return;
+        setCourse(data);
+      } catch (e: any) {
+        setFail(e.message);
+      }
+    })();
   }, [id])
 
   return (<>
     <div className="hidden md:block overflow-y-hidden h-full">
       <GradBlobTRSm />
     </div>
-        <div className="md:hidden block"><GradBlobResp /></div>    
+    <div className="md:hidden block"><GradBlobResp /></div>
     {
       !isNull(course) && (isEnterprise || !isNull(instructor)) && !fail ? (<>
-          <div className="mx-auto w-10/12 mt-12 ">
+        <div className="mx-auto w-10/12 mt-12 ">
           <Banner course={course} isEnterprise={isEnterprise} />
           {
             !isEnterprise ? (<>
@@ -47,24 +52,24 @@ const Course = () => {
               />
               {course.self_paced ? (<Curriculum curr={Object.values(course.timeline)} />) : (<CustTimeline list={course.timeline} />)}
             </>) : (<div className="mt-32 z-20 relative">
-                <Curriculum curr={Object.values(course.timeline)} />
+              <Curriculum curr={Object.values(course.timeline)} />
             </div>)
           }
         </div>
         {/* {
           !course.self_paced && (<Instructor instructor={instructor} />)
         } */}
-          <CourseCTA courseId={course.id} />
-        </>) : (
+        <CourseCTA courseId={course.id} />
+      </>) : (
         <div style={{ marginTop: '40vh', textAlign: 'center' }}>
-            <CircularProgress color="secondary" />            
-            <div className="w-full">
-              <div className="my-10">Looks like there is some problem!</div>
-              <Link to={'/courses'} className='px-14 py-4 text-white bg-color-400 font-bold rounded-xl'>Explore Other Courses</Link>
-            </div>
+          <CircularProgress color="secondary" />
+          <div className="w-full">
+            <div className="my-10">Looks like there is some problem!</div>
+            <Link to={'/courses'} className='px-14 py-4 text-white bg-color-400 font-bold rounded-xl'>Explore Other Courses</Link>
+          </div>
         </div>
-        )
-    }    
+      )
+    }
   </>);
 }
 

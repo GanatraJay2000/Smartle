@@ -27,20 +27,20 @@ html {
   color: theme("colors.slate.900") !important;
 }
 
-// /* width */
-// ::-webkit-scrollbar {
-//   width: 14px;
-// }
+/* width */
+::-webkit-scrollbar {
+  width: 14px;
+}
 
-// /* Track */
-// ::-webkit-scrollbar-track {
-//   background: transparent;
-// }
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
 
-// /* Handle */
-// ::-webkit-scrollbar-thumb {
-//   background: var(--scrollBarColor);
-// }
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--scrollBarColor);
+}
 
 .timeline {
   .timeline-line {

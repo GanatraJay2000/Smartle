@@ -29,8 +29,8 @@ const Banner = ({ course, isEnterprise=false }: Props) => {
                 }
                 <div className="flex gap-4">
                     <Button
-                        onClick={handleOpenInterest} 
-                        className='mt-12 px-7 md:px-14 py-2 text-white bg-color-400 font-bold rounded-xl'>Register Your Interest</Button>
+                        onClick={handleOpenInterest}
+                        className='mt-12 px-7 md:px-14 py-2 text-white bg-color-400 font-bold rounded-md'>Register Your Interest</Button>
                 </div>
             </div>
             <div className="md:w-1/2 flex items-center justify-center">

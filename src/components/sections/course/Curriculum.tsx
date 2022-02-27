@@ -4,7 +4,6 @@ interface Props{
     curr: any;
 }
 const Curriculum = ({ curr }: Props) => {
-  console.log(curr);
   return (<>
     <div className='mb-20'>
       <h1 className="text-4xl font-black text-center mb-20">Course Curriculum</h1>

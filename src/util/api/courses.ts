@@ -23,15 +23,20 @@ export function getCourses(param?: any, value?: any, compare: any = "=", ent:boo
     }
     finalCourses.push(lclCourse);
   })
-  console.log(finalCourses);
   const courses: any = finalCourses;
   return courses;
 }
 
-export function getCourse(id: any, type: any = "slug", ent:boolean=false) {
-  let lclCourse = courseList.find((element: any) => element[type] === id);
-  if (!lclCourse) return;
-  if (ent == false) lclCourse.instructor = getInstructor(1)  
+export function getCourse(id: any, type: any = "slug", ent: boolean = false) {  
+  let lclCourse = [];
+  console.log(ent);
+  if (ent == false) {
+    lclCourse = courseList.find((element: any) => element[type] === id);
+    if (!lclCourse) return; 
+    lclCourse.instructor = getInstructor(1)
+  } else {
+    lclCourse = courseList.filter((element: any) => element[type] === id);
+  }
   const course: any = lclCourse;
   return course;
 }
