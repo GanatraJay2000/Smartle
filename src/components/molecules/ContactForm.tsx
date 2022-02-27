@@ -12,6 +12,8 @@ import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import FormHelperText from '@mui/material/FormHelperText';
 import Button from '@mui/material/Button';
+import { sendMail } from '../../util/api';
+import { BlueBar } from '../../util/resources';
 
 
 interface Props{
@@ -20,9 +22,10 @@ interface Props{
     btnColor?: any;
     classes?: any;
     fieldClasses?: any;
-    submitMethod?: any;
+    whichForm?: any;
+    setTopFail?: any;
 }
-const ContactForm = ({ fields, color='bg-accent-200', btnColor='bg-color-400', classes='rounded-lg hover:shadow-lg shadow-md p-0 md:p-5', fieldClasses='px-4', submitMethod }: Props) => {
+const ContactForm = ({ whichForm='Home Page', fields, color='bg-accent-200', btnColor='bg-color-400', classes='rounded-lg hover:shadow-lg shadow-md p-0 md:p-5', fieldClasses='px-4', setTopFail}: Props) => {
     const [isSubmitted, setSubmitted] = useState(false);
     const [fail, setFail] = useState<string | undefined>(undefined);
     const [initValues, setInitValues] = useState<Record<string, any> | undefined>(undefined);
@@ -31,8 +34,8 @@ const ContactForm = ({ fields, color='bg-accent-200', btnColor='bg-color-400', c
     useEffect(() => {                    
         if (isNull(fields)) return;        
         fields.sort((a: { priority: number; }, b: { priority: number; }) => a.priority - b.priority);
-        const schemaObj: Record<string, any> = {};
-        const lclInitValues: Record<string, any> = {};        
+        const schemaObj: Record<string, any> = {form: Yup.string()};
+        const lclInitValues: Record<string, any> = {form: whichForm};        
 
         fields.forEach((f:any, idx:number) => {
             var labelName:string = cleanText(f.label) as string;
@@ -45,19 +48,25 @@ const ContactForm = ({ fields, color='bg-accent-200', btnColor='bg-color-400', c
 
 
 
-    return (
+    return (<>            
         <div className=''>
+            {fail && <div className="py-5"><Alert severity="error" className=''>Something went wrong! ({fail})</Alert></div>}
+            {isSubmitted && !fail && <div className="py-5"><Alert severity="success" className=''>Form Submitted Successfully.</Alert></div>}
             {!fail && !isSubmitted && !isNull(initValues) && !isNull(validation) && (<>
                 <Formik
                     initialValues={initValues as any}
                     validationSchema={validation as any}
-                    onSubmit={async (values, { setSubmitting }) => { 
-                        try {      
+                    onSubmit={async (values, { setSubmitting, resetForm }) => { 
+                        try {
+                            setTopFail('Success');
                             setSubmitting(false);
-                            setSubmitted(true);  
-                            submitMethod(values);
+                            setSubmitted(true);
+                            const res = await sendMail(values);
+                            setInitValues({form: whichForm});
+                            resetForm();
                         } catch (e: any) {
                             setFail(e.message);                            
+                            setTopFail(e.message);                            
                         }
                     }}
                 >
@@ -162,11 +171,9 @@ const ContactForm = ({ fields, color='bg-accent-200', btnColor='bg-color-400', c
                     
                 
                 </Formik>
-            </>)}
-            {isSubmitted && !fail && <Alert severity="success" className='mt-5'>Form Submitted Successfully.</Alert>}
-            {fail && <Alert severity="error" className='mt-5'>Something went wrong! ({fail})</Alert>}
+            </>)}            
         </div>
-    );
+    </>);
 }
 
 export default ContactForm;

@@ -40,7 +40,7 @@
       display: inline-block;
       margin-top: var(--image-top);
       margin-left: var(--image-left);
-      width: 100%;
+      width: var(--image-width);
       height: 120%;
       // width: 20rem;height: 20rem;
       position: relative;

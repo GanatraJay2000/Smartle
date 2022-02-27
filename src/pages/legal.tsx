@@ -1,4 +1,5 @@
 import React from 'react';
+import GradientBlobT from '../components/atom/GradientBlobT';
 import data from '../util/resources/files/legal.json';
 
 const Title = ({ children }:{children:any}) => <h1 className='text-2xl md:text-3xl text-gray-700 dark:text-gray-300'>{children}</h1>
@@ -7,8 +8,9 @@ const List = ({ children }: { children: any }) => <ol className={`mt-6 ml-3 md:m
 const ListBlock = ({ children }: { children: any }) => <div className='p-8 rounded-xl'>{children}</div>
 
 const Legal = () => {
-    return (
-        <div className='my-10 md:w-11/12 mx-auto md:pr-6'>
+    return (<>
+        <GradientBlobT />
+        <div className='my-36 md:w-11/12 mx-auto md:pr-6'>
             <h1 className="text-center  text-4xl font-extrabold  mb-10">Terms of Service</h1>
             {
                 data.map((d, idx) => {
@@ -38,7 +40,7 @@ const Legal = () => {
                 })
             }
         </div>
-    )
+    </>)
 }
 
 export default Legal;

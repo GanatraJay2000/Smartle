@@ -1,7 +1,7 @@
 import { Button } from '@mui/material';
 import React from 'react';
 import PopOutCircle from '../../atom/PopOutCircle';
-import { Demo3 as BImg,   Dog } from '../../../util/resources';
+import { HomeBannerGirl1 as BImg} from '../../../util/resources';
 import { Link } from 'react-router-dom';
 import GradientBlobTR from '../../atom/GradientBlobTR';
 
@@ -29,7 +29,7 @@ const Banner = () => {
       </div>  
       <div className="select-none w-full md:w-1/2 h-full relative flex md:block justify-center">
         <div className="hidden md:block">
-          <PopOutCircle image={BImg} imageSize="4" />          
+          <PopOutCircle image={BImg} imageLeft='-1rem' imageWidth="110%" imageTop={"3.5rem"} />
         </div>
         <div className="block md:hidden">
           <PopOutCircle image={BImg} imageSize="2.5" />          

@@ -5,14 +5,16 @@ interface Props{
     imageTop?: any;
     imageLeft?: any;
     imagePos?: any; 
+    imageSize?: any;
+    imageWidth?: any;
     circleBg?: any;
     imageOverflow?: any;
     borderColor?: any;
-    imageSize?: any;
     circleShadow?: any;
     extraClasses?: any;
+
 }
-const PopOutCircle = ({ image, imageTop='3rem', imageLeft='0rem', imagePos='left top', circleBg='bg-accent-200', imageOverflow='hidden', borderColor='purple', imageSize='4', circleShadow='16px 16px 16px #00000033', extraClasses=""}:Props) => {      
+const PopOutCircle = ({ image, imageTop='3rem', imageLeft='0rem', imagePos='left top', circleBg='bg-accent-200', imageOverflow='hidden', borderColor='purple', imageSize='4', circleShadow='16px 16px 16px #00000033', extraClasses="", imageWidth="100%"}:Props) => {      
     
     let style = {
         "--image-url": `url("${image}")`,
@@ -21,6 +23,7 @@ const PopOutCircle = ({ image, imageTop='3rem', imageLeft='0rem', imagePos='left
         "--image-pos": `${imagePos}`,
         "--image-overflow": `${imageOverflow}`,
         "--image-size": `${imageSize}`,        
+        "--image-width": `${imageWidth}`,        
         "--circle-shadow": `${circleShadow}`,
     } as React.CSSProperties;
 

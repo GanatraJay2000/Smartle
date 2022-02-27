@@ -1,4 +1,5 @@
 import React from 'react';
+import GradientBlobT from '../components/atom/GradientBlobT';
 import { isNull } from '../util/helpers';
 import data from '../util/resources/files/privacy.json';
 
@@ -9,8 +10,9 @@ const ListBlock = ({ children }: { children: any }) => <div className='p-8 round
 
 
 const PrivacyPolicy = () => {
-    return (
-        <div className='my-10 md:w-11/12 mx-auto md:pr-6'>
+    return (<>
+        <GradientBlobT />
+        <div className='my-36 md:w-11/12 mx-auto md:pr-6'>
             <h1 className="text-center text-4xl font-extrabold mb-10">Privacy Policy</h1>
             {
                 data.map((d, idx) => {
@@ -55,7 +57,7 @@ const PrivacyPolicy = () => {
                 })
             }
         </div>
-    )
+    </>)
 }
 
 export default PrivacyPolicy;

@@ -21,7 +21,7 @@ const Home = () => {
       <h1 className="text-3xl md:text-5xl text-center mb-10 font-black" id="contactForm">Get in touch with us</h1>
       <div className="pb-20">
         <div className="flex flex-wrap flex-col-reverse md:flex-row w-10/12 mx-auto" >
-          <div className="md:w-4/12 md:mr-10 flex items-center justify-center"> 
+          <div className="pb-40 md:w-4/12 md:mr-10 flex items-center justify-center"> 
             <div className="hidden md:block">
               <PopOutCircle image={BImg} imageTop="4.7rem" imageLeft="0.2rem" />
             </div>           

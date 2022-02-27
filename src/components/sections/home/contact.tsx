@@ -1,5 +1,7 @@
 import React from 'react';
 import ContactForm from '../../molecules/ContactForm';
+import emailjs from '@emailjs/browser';
+import { sendMail } from '../../../util/api';
 
 const Contact = () => {
   let fields:any = [
@@ -17,7 +19,7 @@ const Contact = () => {
     {
       label: "Phone",
       required: true,
-      type: 'number',      
+      type: 'text',      
       width: '1/2',      
     },    
     {
@@ -40,11 +42,7 @@ const Contact = () => {
   ];
   return <div className=' relative z-10 mx-auto'>    
     <div className="py-3">
-      <ContactForm fields={fields} submitMethod={(values:any) => {
-        
-        console.log("values from contact")
-        console.log(values)
-      }} />
+      <ContactForm fields={fields} />
     </div>
   </div>;
 }
