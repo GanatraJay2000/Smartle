@@ -11,7 +11,7 @@ const Courses = () => {
   const [updateCourses, setUpdateCourses] = useState(1);
   const [fail, setFail] = useState(undefined);
   const [filterValue, setFilterValue] = useState<string | undefined>(undefined);
-  const [filterAge, setFilterAge] = useState<string | undefined>(undefined);
+  const [filterAge, setFilterAge] = useState<string | undefined>('All');
 
   useEffect(() => {
     ( () => {
@@ -26,15 +26,16 @@ const Courses = () => {
   }, [])
 
   useEffect(() => {
-    if (!isNull(courses) && !isNull(ogCourses)) {      
+    if (!isNull(courses) && !isNull(ogCourses)) {    
+      setFilterAge(undefined);
+      setCourses([]);
       let lclCourses = [ ...ogCourses ];
-      if (!isNull(filterValue)) setCourses(lclCourses);            
+      if (isNull(filterValue)) setCourses(lclCourses);  
       (async () => {
         let newlist  = await lclCourses?.filter(
           (course: any) => course.title?.toLowerCase().includes(filterValue?.toLowerCase())
-          )      
-        lclCourses = newlist;        
-        setCourses(lclCourses);
+        )      
+        setCourses(newlist);
         setUpdateCourses(updateCourses+1)
       })();
     }
@@ -43,11 +44,13 @@ const Courses = () => {
 
   useEffect(() => {
     if (!isNull(filterAge) && !isNull(ogCourses)) {
+      setCourses([]);
       let lclCourses = [...ogCourses];   
       setCourses([]);
-      if (filterAge === 'All') {
+      if (filterAge == 'All') {
         setCourses(lclCourses);
         setUpdateCourses(updateCourses + 1)
+        return;
       } else {
         (async () => {
           let newlist = await lclCourses?.filter(
@@ -89,7 +92,7 @@ const Courses = () => {
             <input type="text" id="filter-input2"
               placeholder="Filter"
                 className="mb-3 mx-auto  border border-slate-500 w-10/12 rounded-lg px-5 py-2"
-                onKeyDown={function(e){if (e.key === 'Enter') setFilterValue((e.target as any).value)}}
+                onKeyDown={function(e){if (e.key == 'Enter') setFilterValue((e.target as any).value)}}
             />
           </div>
           <div className="text-center">
@@ -121,7 +124,7 @@ const Courses = () => {
         </div>
       </div>
       {
-        (!isNull(courses) && updateCourses) && (
+        (!isNull(courses) && courses && updateCourses) && (
           <CoursesStack courses={courses} />
         )
       }

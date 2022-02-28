@@ -54,7 +54,7 @@ const Features = () => {
   return (
     <div>
       <div        
-        className="featuresContainer  z-10 overflow-y-hidden relative border-3"
+        className="featuresContainer mt-32 z-10 overflow-y-hidden relative border-3"
       >
         <h1 className="text-3xl md:text-5xl font-black text-center">Features of Smartle</h1>
         <img className="hidden sm:block absolute z-20" src={Feature.default} alt="" />

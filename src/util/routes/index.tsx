@@ -44,13 +44,6 @@ const routes: Array<RouteType> = [
 		title: '{--Course--}',
 		show:false
 	},
-	// {
-	// 	element: <About />,
-	// 	key: 'about',
-	// 	path: '/about',
-	// 	title: 'About us',
-	// 	show:true
-	// },
 	{
 		element: <Enterprise />,
 		key: 'enterprise',

@@ -25,9 +25,9 @@ const CourseStackElement = ({ course }: Props) => {
                         <div className="font-semibold mb-1">Age: {course.age} Yrs</div>
                         <div className="font-bold text-3xl mb-2">{course.title}</div>
                         <div className="mb-2">{course.desc}</div>
-                        <div className="mb-14 flex items-center">
+                        <div className="md:w-9/12 mb-6 flex items-center">
                             <img className="w-10 h-10 mr-5" src={Clock.default} alt="" />
-                            <div className="">Duration: <span>{course.duration}</span></div>
+                            <div className="">Duration: <span className=''>{course.duration}</span></div>
                         </div>
                         {/* <div className="mb-5 md:mb-10 flex items-center">
                             <img className="w-10 h-10 mr-5" src={Card.default} alt="" />            

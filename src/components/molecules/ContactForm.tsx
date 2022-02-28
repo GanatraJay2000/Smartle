@@ -25,7 +25,7 @@ interface Props{
     whichForm?: any;
     setTopFail?: any;
 }
-const ContactForm = ({ whichForm='Home Page', fields, color='bg-accent-200', btnColor='bg-color-400', classes='rounded-lg hover:shadow-lg shadow-md p-0 md:p-5', fieldClasses='px-4', setTopFail}: Props) => {
+const ContactForm = ({ whichForm = 'Home Page', fields, color = 'bg-accent-200', btnColor = 'bg-color-400', classes = 'rounded-lg hover:shadow-lg shadow-md p-0 md:p-5', fieldClasses = 'px-4', setTopFail = (data:string)=> {console.log(data)}}: Props) => {
     const [isSubmitted, setSubmitted] = useState(false);
     const [fail, setFail] = useState<string | undefined>(undefined);
     const [initValues, setInitValues] = useState<Record<string, any> | undefined>(undefined);

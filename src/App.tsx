@@ -15,8 +15,14 @@ function App() {
   const location = useLocation();
   
   useEffect(() => {
-    window.scrollTo(0, 0);    
-    if (location.pathname === "/enterprise")
+    window.scrollTo(0, 0);
+    if (
+      location.pathname === "/enterprise" ||
+      location.pathname === "/course/chemistry" ||
+      location.pathname === "/course/mathematics" ||
+      location.pathname === "/course/biology" ||
+      location.pathname === "/course/physics"
+    )
       document.documentElement.style.setProperty('--scrollBarColor', '#5290F2');
     else
       document.documentElement.style.setProperty('--scrollBarColor', '#917ebd');
