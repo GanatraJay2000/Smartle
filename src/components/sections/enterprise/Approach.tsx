@@ -61,7 +61,7 @@ const Approach = () => {
 
   return (
     <div>
-      <h1 className="text-4xl md:text-5xl pt-10 font-black text-center">Our approach</h1>
+      <h1 className="text-4xl md:text-3xl pt-10 font-black text-center">Our Approach</h1>
       <div   
         style={{ height: "40rem" }}
         className="overflow-y-hidden pt-5  relative border-3"

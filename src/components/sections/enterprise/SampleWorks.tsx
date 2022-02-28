@@ -21,7 +21,7 @@ const SampleWorks = () => {
     
     return (
         <div className='my-16'>
-            <h1 className="mb-10 text-center text-3xl font-extrabold">Sample Works</h1>
+            <h1 className="mb-10 text-center text-3xl font-extrabold">Explore Sample STEM Courses</h1>
             {
                 !isNull(courses) && (<CoursesGrid elementWidth='sm:w-1/2 md:w-3/12' color="contrastAccent-200" courses={courses} />)
             }
