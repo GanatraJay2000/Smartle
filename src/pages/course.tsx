@@ -25,6 +25,7 @@ const Course = () => {
         if (id === 'chemistry' || id === 'mathematics' || id === 'physics' || id === 'biology') {
           data = getCourse(id, "slug", true);
           setIsEnterprise(true);
+          document.documentElement.style.setProperty('--scrollBarColor', '#5290F2');
           let lclCourse = { ...data[0] };
           delete lclCourse.grade;
           delete lclCourse.timeline;

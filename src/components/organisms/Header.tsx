@@ -21,7 +21,12 @@ const Header = () => {
     const [contactColor, setContactColor] = useState('color');
     
     useEffect(() => {
-        if (location.pathname === '/enterprise') {
+        if (location.pathname === '/enterprise' || 
+            location.pathname === '/course/mathematics' ||             
+            location.pathname === '/course/biology' ||             
+            location.pathname === '/course/chemistry' ||             
+            location.pathname === '/course/physics'            
+        ) {
             setContactColor('contrast');
             setLinkAdd('/enterprise#contactForm')
         }

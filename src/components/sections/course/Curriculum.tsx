@@ -24,7 +24,7 @@ const Curriculum = ({ curr, enterprise = false }: Props) => {
                 {
                   keys.map((k, kidx) => {
                     let activeClass="border-2 border-contrast-400 bg-white text-contrast-400";
-                    if (kidx === tabVal) activeClass = "bg-contrast-400 text-white"
+                    if (kidx === tabVal) activeClass = "border-2 border-contrast-400 bg-contrast-400 text-white"
                     return (
                       <button onClick={()=>setTabVal(kidx)} className={`${activeClass} py-2 px-5 mx-4 rounded-md`}>{k}</button>
                     )
