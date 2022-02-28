@@ -1,7 +1,9 @@
 import CircularProgress from '@mui/material/CircularProgress';
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import GradBlobBlueTR from '../components/atom/GradBlobBlueTR';
 import GradBlobResp from '../components/atom/GradBlobResp';
+import GradBlobRespBlue from '../components/atom/GradBlobRespBlue';
 import GradBlobTRSm from '../components/atom/GradBlobTRSm';
 import { Banner, StatsCard, Curriculum, CustTimeline } from '../components/sections/course';
 import CourseCTA from '../components/sections/course/CourseCTA';
@@ -23,11 +25,22 @@ const Course = () => {
         if (id === 'chemistry' || id === 'mathematics' || id === 'physics' || id === 'biology') {
           data = getCourse(id, "slug", true);
           setIsEnterprise(true);
+          let lclCourse = { ...data[0] };
+          delete lclCourse.grade;
+          delete lclCourse.timeline;
+          lclCourse['timeline'] = {};
+          data.forEach((d:any) => {
+            lclCourse['timeline'][d.grade] = d.timeline;
+          })
+          Object.fromEntries(Object.entries(lclCourse['timeline']).sort((a, b) => {
+            return parseInt(a[0].replace("Grade ", "")) - parseInt(b[0].replace("Grade ", ""))
+          }))
+          data = lclCourse;
         } else {
           data = getCourse(id);
           setInstructor(data.instructor);
         }
-        if (!isNull(data)) return;
+        if (isNull(data)) return;
         setCourse(data);
       } catch (e: any) {
         setFail(e.message);
@@ -36,10 +49,17 @@ const Course = () => {
   }, [id])
 
   return (<>
-    <div className="hidden md:block overflow-y-hidden h-full">
+    {
+      !isEnterprise ? (<>
+        <div className="hidden md:block overflow-y-hidden h-full">
       <GradBlobTRSm />
     </div>
     <div className="md:hidden block"><GradBlobResp /></div>
+      </>) : (<>
+          <div className="md:hidden block"><GradBlobRespBlue /></div>
+          <div className="hidden md:block"><GradBlobBlueTR /></div>
+      </>)
+    }
     {
       !isNull(course) && (isEnterprise || !isNull(instructor)) && !fail ? (<>
         <div className="mx-auto w-10/12 mt-12 ">
@@ -52,14 +72,14 @@ const Course = () => {
               />
               {course.self_paced ? (<Curriculum curr={Object.values(course.timeline)} />) : (<CustTimeline list={course.timeline} />)}
             </>) : (<div className="mt-32 z-20 relative">
-              <Curriculum curr={Object.values(course.timeline)} />
+                <Curriculum enterprise={course.enterprise} curr={course.timeline} />
             </div>)
           }
         </div>
         {/* {
           !course.self_paced && (<Instructor instructor={instructor} />)
         } */}
-        <CourseCTA courseId={course.id} />
+        <CourseCTA isEnterprise={isEnterprise} courseId={course.id} />
       </>) : (
         <div style={{ marginTop: '40vh', textAlign: 'center' }}>
           <CircularProgress color="secondary" />

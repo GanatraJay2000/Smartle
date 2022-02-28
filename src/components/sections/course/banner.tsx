@@ -30,11 +30,11 @@ const Banner = ({ course, isEnterprise=false }: Props) => {
                 <div className="flex gap-4">
                     <Button
                         onClick={handleOpenInterest}
-                        className='mt-12 px-7 md:px-14 py-2 text-white bg-color-400 font-bold rounded-md'>Register Your Interest</Button>
+                        className={`mt-12 px-7 md:px-14 py-2 text-white ${isEnterprise ? 'bg-contrast-400' : 'bg-color-400'} font-bold rounded-md`}>Register Your Interest</Button>
                 </div>
             </div>
             <div className="md:w-1/2 flex items-center justify-center">
-                <div className="bg-accent-200 rounded-md shadow-xl p-3 w-10/12 relative">
+                <div className={`${isEnterprise ? 'bg-contrastAccent-200' : 'bg-accent-200'} rounded-md shadow-xl p-3 w-10/12 relative`}>
                     <img src={course?.image} className="rounded-md w-full" alt="" />
                 </div>
             </div>          
