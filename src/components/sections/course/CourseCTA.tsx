@@ -15,12 +15,12 @@ const CourseCTA = ({courseId, isEnterprise=false}:Props) => {
             <div className="w-10/12 mx-auto">
                 <div className="text-center pb-5">Register now to give your kids the competitive edge with Smartle.</div>
                 <div className="flex justify-center gap-4">
-                    <RegisterInterestModal courseId={courseId} openInterest={openInterest} handleCloseInterest={handleCloseInterest} />
+                    <RegisterInterestModal isEnterprise={isEnterprise} courseId={courseId} openInterest={openInterest} handleCloseInterest={handleCloseInterest} />
                     <Button
                         onClick={handleOpenInterest}
-                        className={`px-14 py-2 text-white ${isEnterprise ? 'bg-contrast-400' : 'bg-color-400'} font-bold rounded-xl`}>Register Your Interest</Button>
-                    {/* <Button className='px-14 py-2 text-white bg-color-400 font-bold rounded-xl'>Buy Course</Button>
-                    <Button className='px-14 py-2 text-white bg-color-400 font-bold rounded-xl'>Book Trial</Button> */}
+                        className={`px-14 py-2 text-white ${isEnterprise ? 'bg-contrast-400' : 'bg-color-400'} font-bold rounded-md`}>Register Your Interest</Button>
+                    {/* <Button className='px-14 py-2 text-white bg-color-400 font-bold rounded-md'>Buy Course</Button>
+                    <Button className='px-14 py-2 text-white bg-color-400 font-bold rounded-md'>Book Trial</Button> */}
                 </div>
             </div>            
         </div>

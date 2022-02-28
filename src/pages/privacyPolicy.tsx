@@ -6,7 +6,7 @@ import data from '../util/resources/files/privacy.json';
 const Title = ({ children }:{children:any}) => <h1 className='text-2xl font-bold text-gray-700 dark:text-gray-300 md:text-3xl'>{children}</h1>
 const LI = ({ children, sub }: { children: any, sub?: boolean }) => <li className={`text-sm ${sub?'mb-2':'mb-5'} text-justify text-gray-700 dark:text-gray-400`}>{children}</li>
 const List = ({ children, sub }: { children: any, sub?: boolean }) => <ol className={`${sub ? 'mt-3': 'mt-6'} ml-3 md:ml-10 list-decimal`}>{children}</ol>
-const ListBlock = ({ children }: { children: any }) => <div className='p-8 rounded-xl'>{children}</div>
+const ListBlock = ({ children }: { children: any }) => <div className='p-8 rounded-md'>{children}</div>
 
 
 const PrivacyPolicy = () => {

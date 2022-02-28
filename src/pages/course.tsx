@@ -86,7 +86,7 @@ const Course = () => {
           <CircularProgress color="secondary" />
           <div className="w-full">
             <div className="my-10">Looks like there is some problem!</div>
-            <Link to={'/courses'} className='px-14 py-4 text-white bg-color-400 font-bold rounded-xl'>Explore Other Courses</Link>
+            <Link to={'/courses'} className='px-14 py-4 text-white bg-color-400 font-bold rounded-md'>Explore Other Courses</Link>
           </div>
         </div>
       )

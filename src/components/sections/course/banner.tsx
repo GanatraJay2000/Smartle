@@ -16,7 +16,7 @@ const Banner = ({ course, isEnterprise=false }: Props) => {
     const handleCloseInterest = () => setOpenInterest(false);
 
     return (<>
-        <RegisterInterestModal courseId={course.id} openInterest={openInterest} handleCloseInterest={handleCloseInterest} />
+        <RegisterInterestModal isEnterprise={isEnterprise} courseId={course.id} openInterest={openInterest} handleCloseInterest={handleCloseInterest} />
         <div className="z-20 relative flex flex-wrap flex-col-reverse md:flex-row">
             <div className="md:w-1/2 mt-10 md:mt-0 md:pr-10">
                 <h1 className="font-black text-3xl text-center md:text-left">{course.title}</h1>
@@ -59,7 +59,7 @@ export default Banner;
             aria-describedby="modal-modal-description"            
         >
             <div className="w-11/12 md:w-9/12 md:h-full py-20 md:py-10 mx-auto">
-                <div className="rounded-xl md:p-5 bg-white h-full w-full relative">
+                <div className="rounded-md md:p-5 bg-white h-full w-full relative">
                     <div onClick={handleCloseVideo} className="cursor-pointer absolute -top-5 -right-5 h-10 w-10 bg-color-400 text-white text-3xl rounded-full flex justify-center items-center">
                         &times;
                     </div>

@@ -41,13 +41,6 @@ const Header = () => {
             <Toolbar className="flex z-30 items-center w-11/12 mx-auto">
                 <div className={`${isMobile ? 'flex-grow' : 'mr-5'}`}>
                     <Link to="/" className={`block dark:hidden ${isMobile ? 'text-xl pt-3 pl-1' : ' text-2xl px-8 py-1 shadow-none rounded-sm'}`}>
-                        {/* {
-                            location.pathname === '/courses' ? (
-                                <img className='w-32' src={LogoAlt.default} alt="" />
-                            ) : (
-                                <img className='w-32' src={Logo.default} alt="" />
-                                )
-                            } */}
                             <img className='w-32' src={Logo.default} alt="" />
                     </Link>
                     <Link to="/" className={`hidden dark:block  ${isMobile ? 'text-xl pt-3 pl-1' : 'text-2xl px-8 py-1 shadow-none rounded-sm'}`}>
@@ -76,7 +69,7 @@ const Header = () => {
                     <div className="">
                             <Link to={linkAdd}                            
                             >
-                                <Button className={`bg-${contactColor}-400 text-white rounded-xl font-bold shadow-none drop-shadow-lg px-8 py-2 `}>
+                                <Button className={`bg-${contactColor}-400 text-white rounded-md font-bold shadow-none drop-shadow-lg px-8 py-2 `}>
                                     Contact Us
                                 </Button>
                         </Link>

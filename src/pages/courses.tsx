@@ -85,7 +85,7 @@ const Courses = () => {
             >
               Search
             </button>
-          </div>    
+          </div>
         </div>
         <div className="md:hidden">
           <div className="w-full text-center">
