@@ -13,7 +13,7 @@ const CourseCTA = ({courseId, isEnterprise=false}:Props) => {
     return (
         <div className={`${isEnterprise ? 'bg-contrastAccent-200' : 'bg-accent-200'}  pt-20 pb-16`}>
             <div className="w-10/12 mx-auto">
-                <div className="text-center pb-5">Register now to give your kids the competitive edge with Smartle.</div>
+                <div className="text-center pb-5 text-slate-800">Register now to give your kids the competitive edge with Smartle.</div>
                 <div className="flex justify-center gap-4">
                     <RegisterInterestModal isEnterprise={isEnterprise} courseId={courseId} openInterest={openInterest} handleCloseInterest={handleCloseInterest} />
                     <Button
@@ -22,7 +22,7 @@ const CourseCTA = ({courseId, isEnterprise=false}:Props) => {
                     {/* <Button className='px-14 py-2 text-white bg-color-400 font-bold rounded-md'>Buy Course</Button>
                     <Button className='px-14 py-2 text-white bg-color-400 font-bold rounded-md'>Book Trial</Button> */}
                 </div>
-            </div>            
+            </div>
         </div>
     );
 }
